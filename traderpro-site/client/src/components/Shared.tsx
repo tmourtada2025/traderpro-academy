@@ -100,12 +100,12 @@ export function StatItem({ value, suffix = '', label }: { value: number | null; 
   }, [value]);
 
   return (
-    <div ref={ref} className="flex flex-col items-center gap-2 text-center">
+    <div ref={ref} className="flex flex-col items-center gap-3 text-center">
       {value !== null
-        ? <span className="serif font-bold text-[var(--gold-light)]" style={{ fontSize: 'clamp(42px,7vw,72px)', lineHeight: 1, letterSpacing: '-0.04em' }}>{count}{suffix}</span>
-        : <span className="serif font-bold text-[var(--gold-light)]" style={{ fontSize: 'clamp(18px,2.5vw,28px)', lineHeight: 1, letterSpacing: '-0.02em' }}>MENA · LATAM · SEA</span>
+        ? <span className="serif font-bold" style={{ fontSize: 'clamp(56px,9vw,96px)', lineHeight: 1, letterSpacing: '-0.05em', color: 'rgba(180,140,20,0.72)' }}>{count}{suffix}</span>
+        : <span className="serif font-bold whitespace-nowrap" style={{ fontSize: 'clamp(22px,3vw,36px)', lineHeight: 1, letterSpacing: '-0.02em', color: 'rgba(180,140,20,0.72)' }}>MENA · LATAM · SEA</span>
       }
-      <span className="text-[10px] uppercase tracking-[0.4em] text-stone-400/55">{label}</span>
+      <span className="text-[10px] uppercase tracking-[0.4em] text-stone-400/45">{label}</span>
     </div>
   );
 }
