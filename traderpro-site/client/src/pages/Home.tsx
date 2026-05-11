@@ -69,15 +69,15 @@ export default function Home() {
       </section>
 
       {/* ── STATS STRIP ── */}
-      <div style={{ borderTop: '0.5px solid var(--border)', borderBottom: '0.5px solid var(--border)', background: 'var(--dark-2)' }} className="py-12 px-6">
-        <div className="mx-auto max-w-5xl grid grid-cols-2 gap-10 md:grid-cols-4 md:gap-0">
+      <div style={{ borderTop: '0.5px solid var(--border)', borderBottom: '0.5px solid var(--border)', background: 'var(--dark-2)' }} className="py-14 px-6 overflow-hidden">
+        <div className="mx-auto max-w-6xl grid grid-cols-2 gap-10 md:grid-cols-4 md:gap-4">
           {[
             { value: 400, suffix: '+', label: 'Hours of Content' },
             { value: 3,   suffix: '',  label: 'Languages' },
             { value: 3,   suffix: '',  label: 'Program Tiers' },
-            { value: null,suffix: '',  label: 'Global Markets' },
+            { value: null, suffix: '', label: 'Global Reach' },
           ].map((s, i) => (
-            <div key={i} className={`flex justify-center ${i < 3 ? 'md:border-r md:border-white/[0.07]' : ''}`}>
+            <div key={i} className={`flex justify-center ${i < 3 ? 'md:border-r md:border-white/[0.06]' : ''}`}>
               <StatItem {...s} />
             </div>
           ))}
