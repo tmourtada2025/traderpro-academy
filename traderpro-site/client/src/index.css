@@ -52,22 +52,29 @@ body {
 .dropdown { position: relative; }
 .dropdown-menu {
   position: absolute;
-  top: calc(100% + 12px);
+  top: calc(100% + 4px);
   left: 50%;
-  transform: translateX(-50%);
+  transform: translateX(-50%) translateY(-4px);
   min-width: 200px;
-  background: rgba(10,12,17,0.96);
+  background: rgba(10,12,17,0.97);
   border: 0.5px solid var(--border);
   backdrop-filter: blur(20px);
   padding: 8px 0;
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.2s ease, transform 0.2s ease;
-  transform: translateX(-50%) translateY(-6px);
+  transition: opacity 0.18s ease, transform 0.18s ease;
   z-index: 100;
 }
-.dropdown:hover .dropdown-menu,
-.dropdown-menu:hover {
+/* Bridge pseudo-element fills the gap so mouse doesn't lose hover */
+.dropdown::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: -20px;
+  right: -20px;
+  height: 12px;
+}
+.dropdown:hover .dropdown-menu {
   opacity: 1;
   pointer-events: all;
   transform: translateX(-50%) translateY(0);

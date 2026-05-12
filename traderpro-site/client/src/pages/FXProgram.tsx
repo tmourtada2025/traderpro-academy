@@ -172,7 +172,7 @@ export function FXTierPage({ tier }: { tier: TierKey }) {
       </section>
 
       {/* ── CTA ── */}
-      <section className="relative overflow-hidden px-8 md:px-20 py-36 md:py-36 divider" style={{ background: isElite ? '#090a0e' : 'var(--dark-2)' }}>
+      <section className="relative px-8 md:px-20 py-36 md:py-36 divider" style={{ background: isElite ? '#090a0e' : 'var(--dark-2)' }}>
         <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
         <FadeUp>
           <div className="mx-auto flex max-w-7xl flex-col gap-12 md:flex-row md:items-end md:justify-between">
