@@ -1,130 +1,108 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Link, useLocation } from 'wouter';
 
-const links = [
-  { label: 'Home',     href: '/' },
-  { label: 'About',    href: '/about' },
-  { label: 'Programs', href: '/programs' },
-  { label: 'Pricing',  href: '/pricing' },
-];
-
-interface TickerItem { symbol: string; price: number; dir: 'up'|'down'; change: number; }
-
-const initialTickers: TickerItem[] = [
-  { symbol: 'EUR/USD', price: 1.0842, dir: 'up',   change: 0.15 },
-  { symbol: 'GBP/USD', price: 1.2631, dir: 'down', change: 0.08 },
-  { symbol: 'XAU/USD', price: 2345.60,dir: 'up',   change: 0.32 },
-  { symbol: 'BTC/USD', price: 63240,  dir: 'up',   change: 1.24 },
-  { symbol: 'USD/JPY', price: 153.42, dir: 'down', change: 0.12 },
-  { symbol: 'WTI',     price: 82.14,  dir: 'down', change: 0.45 },
-  { symbol: 'S&P 500', price: 5204,   dir: 'up',   change: 0.67 },
-  { symbol: 'ETH/USD', price: 3412,   dir: 'up',   change: 0.89 },
-];
-
-const headlines = [
-  'Fed holds rates steady amid inflation uncertainty',
-  'Gold hits 6-month high on safe-haven demand',
-  'EUR/USD consolidates ahead of ECB decision',
-  'Bitcoin breaks $63K resistance on institutional inflows',
-  'Oil slides on demand outlook revision',
-];
+function MenuIcon() {
+  return <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"/></svg>;
+}
+function CloseIcon() {
+  return <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"/></svg>;
+}
 
 export default function Navigation() {
-  const [location] = useLocation();
   const [open, setOpen] = useState(false);
-  const [tickers, setTickers] = useState<TickerItem[]>(initialTickers);
+  const [location] = useLocation();
 
-  useEffect(() => {
-    const id = setInterval(() => {
-      setTickers(prev => prev.map(t => {
-        const delta = (Math.random() - 0.5) * 0.002;
-        const newPrice = t.price * (1 + delta);
-        return { ...t, price: newPrice, dir: delta >= 0 ? 'up' : 'down', change: Math.abs(delta * 100) };
-      }));
-    }, 3000);
-    return () => clearInterval(id);
-  }, []);
+  const active = (path: string) =>
+    location === path || location.startsWith(path + '/');
 
-  const fmt = (p: number) => p > 1000 ? p.toFixed(0) : p > 10 ? p.toFixed(2) : p.toFixed(4);
-
-  const tickerContent = tickers.map((t, i) => (
-    <span key={i} className="inline-flex items-center gap-2 px-5 whitespace-nowrap">
-      <span className="mono text-xs text-stone-400">{t.symbol}</span>
-      <span className="mono text-xs font-medium text-stone-200">{fmt(t.price)}</span>
-      <span className="mono text-xs font-bold" style={{ color: t.dir === 'up' ? 'var(--gain)' : 'var(--loss)' }}>
-        {t.dir === 'up' ? '▲' : '▼'} {t.change.toFixed(2)}%
-      </span>
-    </span>
-  ));
-
-  const newsContent = headlines.map((h, i) => (
-    <span key={i} className="inline-flex items-center gap-6 px-6 whitespace-nowrap mono text-xs text-stone-400">
-      <span className="text-[var(--gold)] opacity-60">◆</span>
-      {h}
-    </span>
-  ));
+  const linkCls = (path: string) =>
+    `text-[11px] uppercase tracking-[0.28em] transition hover:text-white ${active(path) ? 'text-white' : 'text-stone-300/75'}`;
 
   return (
-    <>
-      {/* Main nav */}
-      <header className="fixed left-0 right-0 top-0 z-50 px-6 py-5 md:px-10">
-        <div className="flex items-center justify-between">
-          <Link href="/">
-            <a className="serif text-xl tracking-wide text-stone-100 hover:text-[var(--gold-light)] transition-colors">
-              TraderPro
-            </a>
-          </Link>
-          <nav className="hidden md:flex items-center gap-8">
-            {links.map(l => (
-              <Link key={l.href} href={l.href}>
-                <a className={`text-[10px] uppercase tracking-[0.3em] transition-colors ${
-                  location === l.href ? 'text-[var(--gold-light)]' : 'text-stone-300/65 hover:text-stone-100'
-                }`}>{l.label}</a>
-              </Link>
-            ))}
-          </nav>
-          <Link href="/pricing">
-            <a className="hidden md:inline-flex items-center gap-2 rounded-full border border-white/15 px-5 py-2 text-[10px] uppercase tracking-[0.28em] text-stone-200 hover:border-white/30 transition-all">
-              Start Free Trial
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"/><path d="M9 7h8v8" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/></svg>
-            </a>
-          </Link>
-          <button onClick={() => setOpen(!open)} className="md:hidden rounded-full border border-white/10 p-3 text-white">
-            {open
-              ? <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"/></svg>
-              : <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"/></svg>
-            }
-          </button>
-        </div>
-        {open && (
-          <div className="mt-4 rounded-2xl border border-white/10 bg-black/80 p-6 backdrop-blur-xl md:hidden">
-            {links.map(l => (
-              <Link key={l.href} href={l.href}>
-                <a onClick={() => setOpen(false)} className="block py-3 text-sm uppercase tracking-[0.26em] text-stone-100">{l.label}</a>
-              </Link>
+    <header className="fixed left-0 right-0 top-0 z-40 px-5 py-5 md:px-9">
+      <div className="flex items-center justify-between">
+        {/* Logo */}
+        <Link href="/">
+          <a className="font-serif text-xl tracking-wide text-stone-100 hover:opacity-80 transition">TraderPro</a>
+        </Link>
+
+        {/* Desktop nav */}
+        <nav className="hidden items-center gap-8 md:flex">
+
+          {/* Programs dropdown */}
+          <div className="dropdown">
+            <span className={`${linkCls('/programs')} cursor-default flex items-center gap-1`}>
+              Programs
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" style={{ opacity: 0.5, marginTop: 1 }}>
+                <path d="M6 9l6 6 6-6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </span>
+            <div className="dropdown-menu">
+              <div className="section-label">FX Program</div>
+              <Link href="/programs/fx/starter"><a>FX Starter Pack</a></Link>
+              <Link href="/programs/fx/skillbuilder"><a>FX Skill Builder</a></Link>
+              <Link href="/programs/fx/mastery"><a>FX Mastery</a></Link>
+              <div className="section-label">Crypto Program</div>
+              <Link href="/programs/crypto"><a>Coming Soon</a></Link>
+            </div>
+          </div>
+
+          <Link href="/pricing"><a className={linkCls('/pricing')}>Pricing</a></Link>
+          <Link href="/about"><a className={linkCls('/about')}>About</a></Link>
+
+          {/* Policies dropdown */}
+          <div className="dropdown">
+            <span className="text-[11px] uppercase tracking-[0.28em] text-stone-300/75 hover:text-white transition cursor-default flex items-center gap-1">
+              Policies
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" style={{ opacity: 0.5, marginTop: 1 }}>
+                <path d="M6 9l6 6 6-6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </span>
+            <div className="dropdown-menu">
+              <Link href="/policies/disclaimer"><a>Disclaimer</a></Link>
+              <Link href="/policies/privacy"><a>Privacy Policy</a></Link>
+              <Link href="/policies/refund"><a>Refund Policy</a></Link>
+              <Link href="/policies/terms"><a>Terms & Conditions</a></Link>
+              <Link href="/policies/cookies"><a>Cookies Policy</a></Link>
+            </div>
+          </div>
+        </nav>
+
+        {/* CTA */}
+        <Link href="/pricing">
+          <a className="hidden md:inline-flex items-center gap-2 rounded-full border border-white/15 px-5 py-2 text-[10px] uppercase tracking-[0.28em] text-stone-200 hover:border-white/35 transition">
+            Start Free Trial
+          </a>
+        </Link>
+
+        {/* Mobile toggle */}
+        <button onClick={() => setOpen(!open)} className="rounded-full border border-white/10 p-3 text-white backdrop-blur md:hidden">
+          {open ? <CloseIcon /> : <MenuIcon />}
+        </button>
+      </div>
+
+      {/* Mobile menu */}
+      {open && (
+        <div className="mt-4 rounded-3xl border border-white/10 bg-black/80 p-6 backdrop-blur-xl md:hidden">
+          <div className="mb-2 text-[9px] uppercase tracking-[0.45em]" style={{ color: 'var(--gold)' }}>FX Program</div>
+          {[['FX Starter Pack','/programs/fx/starter'],['FX Skill Builder','/programs/fx/skillbuilder'],['FX Mastery','/programs/fx/mastery']].map(([l,h])=>(
+            <Link key={h} href={h}><a onClick={()=>setOpen(false)} className="block py-2.5 text-sm uppercase tracking-[0.22em] text-stone-300">{l}</a></Link>
+          ))}
+          <div className="mt-3 mb-2 text-[9px] uppercase tracking-[0.45em]" style={{ color: 'var(--gold)' }}>Crypto Program</div>
+          <Link href="/programs/crypto"><a onClick={()=>setOpen(false)} className="block py-2.5 text-sm uppercase tracking-[0.22em] text-stone-300">Coming Soon</a></Link>
+          <div className="mt-4 border-t border-white/10 pt-4">
+            {[['Pricing','/pricing'],['About','/about']].map(([l,h])=>(
+              <Link key={h} href={h}><a onClick={()=>setOpen(false)} className="block py-2.5 text-sm uppercase tracking-[0.22em] text-stone-100">{l}</a></Link>
             ))}
           </div>
-        )}
-      </header>
-
-      {/* Ticker strip — sits below nav, sticky */}
-      <div className="fixed left-0 right-0 z-40 overflow-hidden" style={{ top: '72px', background: '#0a0b0e', borderBottom: '0.5px solid var(--gold)', borderTop: '0.5px solid var(--border)' }}>
-        <div className="flex whitespace-nowrap ticker-track py-2">
-          <div className="flex">{tickerContent}</div>
-          <div className="flex">{tickerContent}</div>
+          <div className="mt-4 border-t border-white/10 pt-4">
+            <div className="mb-2 text-[9px] uppercase tracking-[0.45em]" style={{ color: 'var(--stone-dim)' }}>Policies</div>
+            {[['Disclaimer','/policies/disclaimer'],['Privacy Policy','/policies/privacy'],['Refund Policy','/policies/refund'],['Terms & Conditions','/policies/terms'],['Cookies Policy','/policies/cookies']].map(([l,h])=>(
+              <Link key={h} href={h}><a onClick={()=>setOpen(false)} className="block py-2 text-xs uppercase tracking-[0.22em]" style={{ color: 'var(--stone-dim)' }}>{l}</a></Link>
+            ))}
+          </div>
         </div>
-      </div>
-
-      {/* News banner */}
-      <div className="fixed left-0 right-0 z-40 overflow-hidden" style={{ top: '108px', background: 'var(--dark-1)', borderBottom: '0.5px solid var(--border)' }}>
-        <div className="flex whitespace-nowrap ticker-track-slow py-2">
-          <div className="flex">{newsContent}</div>
-          <div className="flex">{newsContent}</div>
-        </div>
-      </div>
-
-      {/* Spacer so content doesn't hide behind fixed bars */}
-      <div style={{ height: '148px' }} />
-    </>
+      )}
+    </header>
   );
 }
