@@ -124,7 +124,7 @@ function PolicyPage({ slug }: { slug: PolicyKey }) {
         </HeroParallax>
       </section>
 
-      <section className="px-8 md:px-20 py-36 divider">
+      <section className="py-36 divider">
         <FadeUp>
           <div className="max-w-4xl mx-auto">
             <div className="text-base leading-9 whitespace-pre-line" style={{ color: 'rgba(200,192,175,0.65)' }}>
@@ -138,6 +138,8 @@ function PolicyPage({ slug }: { slug: PolicyKey }) {
     </div>
   );
 }
+
+const W = "mx-auto w-full max-w-6xl px-8 md:px-20";
 
 export function DisclaimerPage() { return <PolicyPage slug="disclaimer" />; }
 export function PrivacyPage() { return <PolicyPage slug="privacy" />; }

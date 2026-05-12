@@ -3,6 +3,8 @@ import { Grain, AmbientMarketLines, HeroParallax, OrbParallax, MagneticButton, F
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 
+const W = "mx-auto w-full max-w-6xl px-8 md:px-20";
+
 const tiers = {
   starter: {
     num: '01',
@@ -120,10 +122,10 @@ export function FXTierPage({ tier }: { tier: TierKey }) {
       </section>
 
       {/* ── DESCRIPTION ── */}
-      <section className="py-36 md:px-20 md:py-40 divider" style={{ background: isElite ? '#07080b' : 'var(--dark-1)' }}>
+      <section className="py-36 md:py-40 divider" style={{ background: isElite ? '#07080b' : 'var(--dark-1)' }}>
         <FadeUp>
           <p className="mb-8 text-xs uppercase tracking-[0.5em]" style={{ color: t.color }}>About this program</p>
-          <div className="grid gap-10 md:grid-cols-[1fr_1.1fr] md:items-start max-w-7xl">
+          <div className="mx-auto px-8 md:px-20 grid gap-10 md:grid-cols-[1fr_1.1fr] md:items-start max-w-7xl">
             <h2 className="serif text-[8vw] leading-[0.88] tracking-[-0.06em] md:text-[4vw]">
               What you will learn — and how you will trade.
             </h2>
@@ -133,14 +135,14 @@ export function FXTierPage({ tier }: { tier: TierKey }) {
       </section>
 
       {/* ── CURRICULUM ── */}
-      <section className="py-36 md:px-20 md:py-40 divider" style={{ background: isElite ? '#090a0e' : 'var(--dark-2)' }}>
+      <section className="py-36 md:py-40 divider" style={{ background: isElite ? '#090a0e' : 'var(--dark-2)' }}>
         <FadeUp>
           <p className="mb-8 text-xs uppercase tracking-[0.5em]" style={{ color: 'rgba(200,192,175,0.4)' }}>Curriculum</p>
           <h2 className="serif text-[8vw] leading-[0.88] tracking-[-0.06em] mb-16 md:text-[5vw]">
             What's covered.
           </h2>
         </FadeUp>
-        <div className="grid grid-cols-1 gap-0 md:grid-cols-2 max-w-6xl">
+        <div className="mx-auto px-8 md:px-20 grid grid-cols-1 gap-0 md:grid-cols-2 max-w-6xl">
           {t.bullets.map((b, i) => (
             <FadeUp key={b} delay={i * 60}>
               <div className="flex items-start gap-4 py-4" style={{ borderBottom: '0.5px solid var(--border)' }}>
@@ -153,14 +155,14 @@ export function FXTierPage({ tier }: { tier: TierKey }) {
       </section>
 
       {/* ── MODULES ── */}
-      <section className="py-36 md:px-20 divider" style={{ background: isElite ? '#07080b' : 'var(--dark-1)' }}>
+      <section className="py-36 divider" style={{ background: isElite ? '#07080b' : 'var(--dark-1)' }}>
         <FadeUp>
           <p className="mb-8 text-xs uppercase tracking-[0.5em]" style={{ color: 'rgba(200,192,175,0.4)' }}>Sample modules</p>
           <h2 className="serif text-[8vw] leading-[0.88] tracking-[-0.06em] mb-12 md:text-[5vw]">
             Inside the program.
           </h2>
         </FadeUp>
-        <div className="grid grid-cols-1 gap-3 md:grid-cols-3 max-w-4xl">
+        <div className="mx-auto px-8 md:px-20 grid grid-cols-1 gap-3 md:grid-cols-3 max-w-4xl">
           {t.modules.map((m, i) => (
             <FadeUp key={m} delay={i * 70}>
               <div className="py-4 px-5 text-sm" style={{ border: '0.5px solid var(--border)', borderLeftColor: i === 0 ? 'var(--gold-solid)' : 'var(--border)', color: 'rgba(200,192,175,0.72)' }}>
@@ -172,10 +174,10 @@ export function FXTierPage({ tier }: { tier: TierKey }) {
       </section>
 
       {/* ── CTA ── */}
-      <section className="relative px-8 md:px-20 py-36 md:py-36 divider" style={{ background: isElite ? '#090a0e' : 'var(--dark-2)' }}>
+      <section className="relative py-36 divider" style={{ background: isElite ? '#090a0e' : 'var(--dark-2)' }}>
         <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
         <FadeUp>
-          <div className="mx-auto flex max-w-7xl flex-col gap-12 md:flex-row md:items-end md:justify-between">
+          <div className="mx-auto px-8 md:px-20 flex max-w-7xl flex-col gap-12 md:flex-row md:items-end md:justify-between">
             <h2 className="serif text-[12vw] leading-[0.82] tracking-[-0.09em] md:text-[7vw] max-w-[12ch]">
               {tier === 'starter' ? 'Start here.\nStart now.' : tier === 'skillbuilder' ? 'Build your edge.' : 'Master the market.'}
             </h2>

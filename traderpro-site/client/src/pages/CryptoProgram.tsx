@@ -3,6 +3,8 @@ import { Grain, AmbientMarketLines, HeroParallax, OrbParallax, MagneticButton } 
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 
+const W = "mx-auto w-full max-w-6xl";
+
 export default function CryptoProgram() {
   return (
     <div style={{ background: 'var(--dark-1)', color: 'var(--stone)' }} className="min-h-screen">

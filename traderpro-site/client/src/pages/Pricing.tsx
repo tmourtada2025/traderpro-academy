@@ -4,10 +4,11 @@ import { Grain, AmbientMarketLines, HeroParallax, OrbParallax, MagneticButton, F
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 
+const W = "mx-auto w-full max-w-6xl px-8 md:px-20";
+
 const tiers = [
   {
-    name: 'FX Starter Pack',
-    mo: 29.99,
+    name: 'FX Starter Pack', mo: 29.99,
     tagline: 'For beginners starting their trading journey.',
     trial: '7 days free',
     features: [true, false, false, false, false, false, true, false],
@@ -15,18 +16,15 @@ const tiers = [
     primary: false,
   },
   {
-    name: 'FX Skill Builder',
-    mo: 49.99,
+    name: 'FX Skill Builder', mo: 49.99,
     tagline: 'For traders ready to advance their skills.',
-    trial: null,
-    badge: 'Most Popular',
+    trial: null, badge: 'Most Popular',
     features: [true, true, true, false, false, false, true, true],
     bullets: ['Full beginner course access', 'Limited intermediate access', 'Monthly live Q&A sessions', 'Downloadable resources and tools'],
     primary: true,
   },
   {
-    name: 'FX Mastery',
-    mo: 79.99,
+    name: 'FX Mastery', mo: 79.99,
     tagline: 'For serious traders aiming for professional results.',
     trial: null,
     features: [true, true, true, true, true, true, true, true],
@@ -78,116 +76,126 @@ export default function Pricing() {
       </section>
 
       {/* ── TOGGLE ── */}
-      <section className="py-10 md:px-20 divider">
-        <div className="flex items-center gap-8">
-          <button onClick={() => setAnnual(false)} className={`text-[11px] uppercase tracking-[0.3em] pb-1 transition-all ${!annual ? 'text-stone-100 border-b border-[var(--gold-solid)]' : 'text-stone-400 hover:text-stone-200'}`}>
-            Monthly
-          </button>
-          <button onClick={() => setAnnual(true)} className={`relative text-[11px] uppercase tracking-[0.3em] pb-1 transition-all ${annual ? 'text-stone-100 border-b border-[var(--gold-solid)]' : 'text-stone-400 hover:text-stone-200'}`}>
-            Annual
-            {annual && <span className="absolute -top-5 right-0 text-[8px] uppercase tracking-[0.2em] px-2 py-0.5 font-semibold" style={{ background: 'var(--gold-solid)', color: '#08090c' }}>Save 20%</span>}
-          </button>
+      <section className="py-10 divider">
+        <div className={W}>
+          <div className="flex items-center gap-8">
+            <button onClick={() => setAnnual(false)} className={`text-[11px] uppercase tracking-[0.3em] pb-1 transition-all ${!annual ? 'text-stone-100 border-b border-[var(--gold-solid)]' : 'text-stone-400 hover:text-stone-200'}`}>
+              Monthly
+            </button>
+            <button onClick={() => setAnnual(true)} className={`relative text-[11px] uppercase tracking-[0.3em] pb-1 transition-all ${annual ? 'text-stone-100 border-b border-[var(--gold-solid)]' : 'text-stone-400 hover:text-stone-200'}`}>
+              Annual
+              {annual && <span className="absolute -top-5 right-0 text-[8px] uppercase tracking-[0.2em] px-2 py-0.5 font-semibold" style={{ background: 'var(--gold-solid)', color: '#08090c' }}>Save 20%</span>}
+            </button>
+          </div>
         </div>
       </section>
 
       {/* ── TIERS ── */}
-      <section className="px-5 pb-20 md:px-12 divider">
-        <div className="grid grid-cols-1 md:grid-cols-3 max-w-7xl" style={{ borderTop: '0.5px solid var(--border)' }}>
-          {tiers.map((t, i) => (
-            <FadeUp key={t.name} delay={i * 80}>
-              <div className="p-8 h-full" style={{
-                borderRight: i < 2 ? '0.5px solid var(--border)' : 'none',
-                borderLeft: t.primary ? '2px solid var(--gold-solid)' : 'none',
-                background: t.primary ? '#0a0c10' : 'var(--dark-1)',
-              }}>
-                {t.badge && (
-                  <div className="text-[9px] uppercase tracking-[0.3em] mb-4 inline-block px-3 py-1" style={{ border: '0.5px solid var(--gold-solid)', color: 'var(--gold-bright)' }}>{t.badge}</div>
-                )}
-                <h3 className="serif text-2xl mb-2" style={{ letterSpacing: '-0.03em' }}>{t.name}</h3>
-                <div className="serif mb-1" style={{ fontSize: 'clamp(32px,5vw,48px)', color: 'var(--gold-bright)', letterSpacing: '-0.04em', lineHeight: 1 }}>
-                  ${price(t.mo)}<span className="text-sm" style={{ color: 'var(--stone-dim)' }}>{annual ? '/yr' : '/mo'}</span>
+      <section className="pb-24 divider">
+        <div className={W}>
+          <div className="grid grid-cols-1 md:grid-cols-3" style={{ borderTop: '0.5px solid var(--border)' }}>
+            {tiers.map((t, i) => (
+              <FadeUp key={t.name} delay={i * 80}>
+                <div className="p-8 h-full" style={{
+                  borderRight: i < 2 ? '0.5px solid var(--border)' : 'none',
+                  borderLeft: t.primary ? '2px solid var(--gold-solid)' : 'none',
+                  background: t.primary ? '#0a0c10' : 'var(--dark-1)',
+                }}>
+                  {t.badge && (
+                    <div className="text-[9px] uppercase tracking-[0.3em] mb-4 inline-block px-3 py-1" style={{ border: '0.5px solid var(--gold-solid)', color: 'var(--gold-bright)' }}>{t.badge}</div>
+                  )}
+                  <h3 className="serif text-2xl mb-2" style={{ letterSpacing: '-0.03em' }}>{t.name}</h3>
+                  <div className="serif mb-1" style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', color: 'var(--gold-bright)', letterSpacing: '-0.04em', lineHeight: 1 }}>
+                    ${price(t.mo)}<span className="text-sm" style={{ color: 'var(--stone-dim)' }}>{annual ? '/yr' : '/mo'}</span>
+                  </div>
+                  {t.trial && <div className="text-xs mb-3 uppercase tracking-[0.25em]" style={{ color: 'var(--gold)', opacity: 0.7 }}>{t.trial}</div>}
+                  <p className="text-sm mb-6 mt-2" style={{ color: 'var(--stone-dim)' }}>{t.tagline}</p>
+                  <ul className="space-y-3 mb-8">
+                    {t.bullets.map(b => (
+                      <li key={b} className="text-sm flex items-start gap-2" style={{ color: 'rgba(200,192,175,0.65)' }}>
+                        <span style={{ color: 'var(--gold)', marginTop: 2, flexShrink: 0 }}>▸</span>{b}
+                      </li>
+                    ))}
+                  </ul>
+                  <MagneticButton href="#" subtle={!t.primary}>
+                    {t.trial ? 'Start 7-day free trial' : 'Enroll now'}
+                  </MagneticButton>
                 </div>
-                {t.trial && <div className="text-xs mb-3 uppercase tracking-[0.25em]" style={{ color: 'var(--gold)', opacity: 0.7 }}>{t.trial}</div>}
-                <p className="text-sm mb-6" style={{ color: 'var(--stone-dim)' }}>{t.tagline}</p>
-                <ul className="space-y-2 mb-8">
-                  {t.bullets.map(b => (
-                    <li key={b} className="text-sm flex items-start gap-2" style={{ color: 'rgba(200,192,175,0.65)' }}>
-                      <span style={{ color: 'var(--gold)', marginTop: 2 }}>▸</span>{b}
-                    </li>
-                  ))}
-                </ul>
-                <MagneticButton href="/pricing" subtle={!t.primary}>
-                  {t.trial ? 'Start 7-day free trial' : 'Enroll now'}
-                </MagneticButton>
-              </div>
-            </FadeUp>
-          ))}
-        </div>
-      </section>
-
-      {/* ── FEATURE TABLE ── */}
-      <section className="px-8 md:px-20 py-36 divider" style={{ background: 'var(--dark-2)' }}>
-        <FadeUp>
-          <p className="mb-8 text-xs uppercase tracking-[0.5em]" style={{ color: 'rgba(200,192,175,0.4)' }}>What's included</p>
-        </FadeUp>
-        <div className="max-w-6xl overflow-x-auto">
-          <table className="w-full">
-            <thead>
-              <tr style={{ borderBottom: '0.5px solid var(--border)' }}>
-                <th className="text-left py-3 w-2/5 text-xs font-normal uppercase tracking-[0.25em]" style={{ color: 'rgba(200,192,175,0.35)' }}>Feature</th>
-                {tiers.map(t => <th key={t.name} className="py-3 text-center text-xs font-normal uppercase tracking-[0.2em]" style={{ color: 'rgba(200,192,175,0.6)' }}>{t.name.split(' ').slice(1).join(' ')}</th>)}
-              </tr>
-            </thead>
-            <tbody>
-              {featureRows.map((row, ri) => (
-                <tr key={row} style={{ borderBottom: '0.5px solid var(--border)' }}>
-                  <td className="py-3 text-sm" style={{ color: 'rgba(200,192,175,0.55)' }}>{row}</td>
-                  {tiers.map((t, ti) => (
-                    <td key={ti} className="py-3 text-center text-sm">
-                      {t.features[ri] ? <span style={{ color: 'var(--gold-bright)' }} className="serif">✓</span> : <span style={{ color: 'rgba(200,192,175,0.2)' }}>—</span>}
-                    </td>
-                  ))}
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      </section>
-
-      {/* ── PAYMENT METHODS ── */}
-      <section className="py-16 md:px-20 divider" style={{ background: 'var(--dark-1)' }}>
-        <div className="text-center">
-          <div className="text-[10px] uppercase tracking-[0.45em] mb-5" style={{ color: 'rgba(200,192,175,0.35)' }}>Accepted payment methods</div>
-          <div className="flex flex-wrap justify-center gap-x-2 gap-y-1">
-            {psps.map((p, i) => (
-              <span key={p} className="flex items-center gap-2 mono text-xs" style={{ color: 'rgba(200,192,175,0.45)' }}>
-                {i > 0 && <span style={{ color: 'var(--gold)', opacity: 0.3 }}>·</span>}
-                {p}
-              </span>
+              </FadeUp>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ── FAQ ── */}
-      <section className="py-36 md:px-20 divider" style={{ background: 'var(--dark-2)' }}>
-        <FadeUp>
-          <p className="mb-4 text-xs uppercase tracking-[0.5em]" style={{ color: 'rgba(200,192,175,0.4)' }}>FAQ</p>
-          <h2 className="serif text-[10vw] leading-[0.86] tracking-[-0.07em] mb-12 md:text-[5vw]">
-            Common <span className="italic" style={{ color: 'var(--gold-bright)' }}>questions.</span>
-          </h2>
-        </FadeUp>
-        <div className="max-w-3xl">
-          {faqs.map(([q, a], i) => (
-            <div key={i} style={{ borderTop: '0.5px solid var(--border)' }}>
-              <button onClick={() => setOpenFaq(openFaq === i ? null : i)} className="w-full flex items-center justify-between py-5 text-left group">
-                <span className="text-base group-hover:text-stone-100 transition-colors" style={{ color: 'rgba(200,192,175,0.82)' }}>{q}</span>
-                <span className="text-lg ml-4 flex-shrink-0" style={{ color: 'var(--stone-dim)' }}>{openFaq === i ? '−' : '+'}</span>
-              </button>
-              {openFaq === i && <div className="pb-5 text-sm leading-7" style={{ color: 'rgba(200,192,175,0.55)' }}>{a}</div>}
+      {/* ── FEATURE TABLE ── */}
+      <section className="py-20 divider" style={{ background: 'var(--dark-2)' }}>
+        <div className={W}>
+          <FadeUp>
+            <p className="mb-10 text-xs uppercase tracking-[0.5em] text-center" style={{ color: 'rgba(200,192,175,0.4)' }}>What's included</p>
+          </FadeUp>
+          <div className="overflow-x-auto">
+            <table className="w-full">
+              <thead>
+                <tr style={{ borderBottom: '0.5px solid var(--border)' }}>
+                  <th className="text-left py-3 w-2/5 text-xs font-normal uppercase tracking-[0.25em]" style={{ color: 'rgba(200,192,175,0.35)' }}>Feature</th>
+                  {tiers.map(t => <th key={t.name} className="py-3 text-center text-xs font-normal uppercase tracking-[0.2em]" style={{ color: 'rgba(200,192,175,0.6)' }}>{t.name.split(' ').slice(1).join(' ')}</th>)}
+                </tr>
+              </thead>
+              <tbody>
+                {featureRows.map((row, ri) => (
+                  <tr key={row} style={{ borderBottom: '0.5px solid var(--border)' }}>
+                    <td className="py-3 text-sm" style={{ color: 'rgba(200,192,175,0.55)' }}>{row}</td>
+                    {tiers.map((t, ti) => (
+                      <td key={ti} className="py-3 text-center text-sm">
+                        {t.features[ri] ? <span style={{ color: 'var(--gold-bright)' }} className="serif">✓</span> : <span style={{ color: 'rgba(200,192,175,0.2)' }}>—</span>}
+                      </td>
+                    ))}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      {/* ── PAYMENT METHODS ── */}
+      <section className="py-14 divider" style={{ background: 'var(--dark-1)' }}>
+        <div className={W}>
+          <div className="text-center">
+            <div className="text-[10px] uppercase tracking-[0.45em] mb-5" style={{ color: 'rgba(200,192,175,0.35)' }}>Accepted payment methods</div>
+            <div className="flex flex-wrap justify-center gap-x-2 gap-y-2">
+              {psps.map((p, i) => (
+                <span key={p} className="flex items-center gap-2 mono text-xs" style={{ color: 'rgba(200,192,175,0.45)' }}>
+                  {i > 0 && <span style={{ color: 'var(--gold)', opacity: 0.3 }}>·</span>}
+                  {p}
+                </span>
+              ))}
             </div>
-          ))}
-          <div style={{ borderTop: '0.5px solid var(--border)' }} />
+          </div>
+        </div>
+      </section>
+
+      {/* ── FAQ ── */}
+      <section className="py-20 divider" style={{ background: 'var(--dark-2)' }}>
+        <div className={W}>
+          <FadeUp>
+            <p className="mb-4 text-xs uppercase tracking-[0.5em] text-center" style={{ color: 'rgba(200,192,175,0.4)' }}>FAQ</p>
+            <h2 className="serif text-center leading-[0.86] tracking-[-0.07em] mb-14" style={{ fontSize: 'clamp(2.5rem, 6vw, 4rem)' }}>
+              Common <span className="italic" style={{ color: 'var(--gold-bright)' }}>questions.</span>
+            </h2>
+          </FadeUp>
+          <div className="max-w-2xl mx-auto">
+            {faqs.map(([q, a], i) => (
+              <div key={i} style={{ borderTop: '0.5px solid var(--border)' }}>
+                <button onClick={() => setOpenFaq(openFaq === i ? null : i)} className="w-full flex items-center justify-between py-5 text-left group">
+                  <span className="text-base group-hover:text-stone-100 transition-colors" style={{ color: 'rgba(200,192,175,0.82)' }}>{q}</span>
+                  <span className="text-lg ml-4 flex-shrink-0" style={{ color: 'var(--stone-dim)' }}>{openFaq === i ? '−' : '+'}</span>
+                </button>
+                {openFaq === i && <div className="pb-5 text-sm leading-7" style={{ color: 'rgba(200,192,175,0.55)' }}>{a}</div>}
+              </div>
+            ))}
+            <div style={{ borderTop: '0.5px solid var(--border)' }} />
+          </div>
         </div>
       </section>
 
