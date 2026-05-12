@@ -79,21 +79,21 @@ export default function Home() {
       <MarketStrip />
 
       {/* ── FLOW STATEMENT ── */}
-      <section className="relative overflow-hidden divider" style={{ background: 'var(--dark-1)', padding: '9rem 0' }}>
+      <section className="relative divider" style={{ background: 'var(--dark-1)', padding: '9rem 0' }}>
         <div className={W}>
           <FadeUp>
-            <p className="text-xs uppercase tracking-[0.5em]" style={{ color: 'rgba(200,192,175,0.45)', marginBottom: '2.5rem' }}>The approach</p>
-            <h2 className="serif leading-[0.86] tracking-[-0.075em]" style={{ fontSize: 'clamp(3rem, 13vw, 8rem)' }}>
+            <p className="text-xs uppercase tracking-[0.5em] text-center" style={{ color: 'rgba(200,192,175,0.45)', marginBottom: '2.5rem' }}>The approach</p>
+            <h2 className="serif leading-[0.86] tracking-[-0.075em] text-center" style={{ fontSize: 'clamp(3rem, 13vw, 8rem)' }}>
               Less theory.
               <span className="block" style={{ paddingLeft: '9%', color: 'rgba(200,192,175,0.55)' }}>More market.</span>
             </h2>
           </FadeUp>
           <FadeUp delay={200}>
-            <div className="mt-16 grid gap-16 md:grid-cols-[1fr_1.1fr] md:items-end">
+            <div className="mt-20 grid gap-16 md:grid-cols-[1fr_1.1fr] md:items-end">
               <p className="serif leading-tight" style={{ fontSize: 'clamp(1.4rem, 2.2vw, 2rem)', color: 'rgba(200,192,175,0.82)' }}>
                 Over 400 hours built on what actually happens in live markets — not what textbooks say should happen.
               </p>
-              <p className="text-base leading-8" style={{ color: 'rgba(200,192,175,0.55)' }}>
+              <p className="text-base leading-9" style={{ color: 'rgba(200,192,175,0.55)' }}>
                 Every module at TradePro is grounded in real market structure. Trading psychology is woven through all three levels — because discipline is the edge that separates profitable traders from the rest. We teach Forex and Crypto in English, Arabic, and Spanish.
               </p>
             </div>
@@ -102,9 +102,12 @@ export default function Home() {
       </section>
 
       {/* ── PROGRAMS ── */}
-      <section className="relative overflow-hidden divider" style={{ background: 'var(--dark-2)', padding: '9rem 0' }}>
+      <section className="relative divider" style={{ background: 'var(--dark-2)', padding: '9rem 0' }}>
         <div className="absolute right-[-20vw] top-[10%] serif font-black uppercase leading-none tracking-[-0.12em]" style={{ fontSize: '28vw', color: 'rgba(255,255,255,0.018)', pointerEvents: 'none' }}>EDGE</div>
         <div className={W}>
+          <FadeUp>
+            <p className="text-xs uppercase tracking-[0.5em] text-center mb-16" style={{ color: 'rgba(200,192,175,0.45)' }}>FX Programs</p>
+          </FadeUp>
           {programs.map(({ num, title, sub, text, href }, i) => (
             <FadeUp key={title} delay={i * 80}>
               <div
@@ -132,12 +135,12 @@ export default function Home() {
           style={{ background: 'radial-gradient(circle, rgba(210,190,145,0.07), rgba(40,68,95,0.06) 38%, transparent 70%)' }} />
         <div className={W}>
           <FadeUp>
-            <p className="mb-10 text-xs uppercase tracking-[0.55em] text-center" style={{ color: 'rgba(200,192,175,0.45)' }}>Traders who made the shift</p>
+            <p className="text-xs uppercase tracking-[0.55em] text-center" style={{ color: 'rgba(200,192,175,0.45)', marginBottom: '3rem' }}>Traders who made the shift</p>
             <h2 className="serif text-center leading-[0.8] tracking-[-0.09em]" style={{ fontSize: 'clamp(3rem, 14vw, 9rem)' }}>
               Proof in<span className="block" style={{ color: 'rgba(200,192,175,0.55)' }}>execution.</span>
             </h2>
           </FadeUp>
-          <div className="mt-16 grid grid-cols-1 gap-px md:grid-cols-3" style={{ background: 'var(--border)' }}>
+          <div className="mt-20 grid grid-cols-1 gap-px md:grid-cols-3" style={{ background: 'var(--border)' }}>
             {testimonials.map((t, i) => (
               <FadeUp key={t.name} delay={i * 100}>
                 <div className="p-10 h-full" style={{ background: 'var(--dark-1)' }}>
@@ -159,7 +162,7 @@ export default function Home() {
       </section>
 
       {/* ── CTA ── */}
-      <section className="relative overflow-hidden divider" style={{ background: 'var(--dark-2)', padding: '9rem 0' }}>
+      <section className="relative divider" style={{ background: 'var(--dark-2)', padding: '9rem 0' }}>
         <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
         <div className={W}>
           <FadeUp>
