@@ -41,8 +41,8 @@ body {
 
 /* Ticker animations */
 @keyframes ticker-l { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-.ticker-fast { animation: ticker-l 28s linear infinite; display: inline-flex; }
-.ticker-slow { animation: ticker-l 55s linear infinite; display: inline-flex; }
+.ticker-fast { animation: ticker-l 32s linear infinite; display: flex; width: max-content; will-change: transform; }
+.ticker-slow { animation: ticker-l 58s linear infinite; display: flex; width: max-content; will-change: transform; }
 
 /* Fade-up on scroll */
 .fade-up { opacity: 0; transform: translateY(48px); transition: opacity 0.95s ease, transform 0.95s ease; }

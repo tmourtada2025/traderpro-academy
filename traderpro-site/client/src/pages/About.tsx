@@ -38,7 +38,7 @@ export default function About() {
       </section>
 
       {/* ── WHO WE ARE ── */}
-      <section className="px-8 py-32 md:px-20 md:py-40 divider" style={{ background: 'var(--dark-1)' }}>
+      <section className="px-8 md:px-20 py-36 divider" style={{ background: 'var(--dark-1)' }}>
         <FadeUp>
           <p className="mb-8 text-xs uppercase tracking-[0.5em]" style={{ color: 'rgba(200,192,175,0.45)' }}>Who we are</p>
           <h2 className="serif text-[10vw] leading-[0.86] tracking-[-0.07em] md:text-[6vw]">
@@ -59,7 +59,7 @@ export default function About() {
       </section>
 
       {/* ── VISION / MISSION ── */}
-      <section className="px-8 py-32 md:px-20 md:py-40 divider" style={{ background: 'var(--dark-2)' }}>
+      <section className="px-8 md:px-20 py-36 divider" style={{ background: 'var(--dark-2)' }}>
         <div className="mx-auto max-w-7xl grid grid-cols-1 gap-24 md:grid-cols-2">
           <FadeUp>
             <p className="mb-6 text-xs uppercase tracking-[0.45em]" style={{ color: 'var(--gold)' }}>Our Vision</p>
@@ -83,7 +83,7 @@ export default function About() {
       </section>
 
       {/* ── WHAT WE OFFER ── */}
-      <section className="px-8 py-32 md:px-20 md:py-40 divider" style={{ background: 'var(--dark-1)' }}>
+      <section className="px-8 md:px-20 py-36 divider" style={{ background: 'var(--dark-1)' }}>
         <FadeUp>
           <p className="mb-8 text-xs uppercase tracking-[0.5em]" style={{ color: 'rgba(200,192,175,0.45)' }}>Beyond the curriculum</p>
           <h2 className="serif text-[10vw] leading-[0.86] tracking-[-0.07em] md:text-[6vw] max-w-[16ch]">
@@ -108,7 +108,7 @@ export default function About() {
       </section>
 
       {/* ── TEAM ── */}
-      <section className="px-8 py-32 md:px-20 divider" style={{ background: 'var(--dark-2)' }}>
+      <section className="px-8 md:px-20 py-36 divider" style={{ background: 'var(--dark-2)' }}>
         <FadeUp>
           <p className="mb-4 text-xs uppercase tracking-[0.5em]" style={{ color: 'rgba(200,192,175,0.45)' }}>The team</p>
           <h2 className="serif text-[10vw] leading-[0.86] tracking-[-0.07em] mb-16 md:text-[6vw]">
@@ -130,7 +130,7 @@ export default function About() {
       </section>
 
       {/* ── CTA ── */}
-      <section className="relative overflow-hidden px-8 py-32 md:px-20 md:py-36 divider" style={{ background: 'var(--dark-1)' }}>
+      <section className="relative overflow-hidden px-8 md:px-20 py-36 md:py-36 divider" style={{ background: 'var(--dark-1)' }}>
         <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
         <FadeUp>
           <div className="mx-auto flex max-w-7xl flex-col gap-12 md:flex-row md:items-end md:justify-between">

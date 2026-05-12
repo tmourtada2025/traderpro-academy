@@ -120,7 +120,7 @@ export function FXTierPage({ tier }: { tier: TierKey }) {
       </section>
 
       {/* ── DESCRIPTION ── */}
-      <section className="px-8 py-36 md:px-20 md:py-40 divider" style={{ background: isElite ? '#07080b' : 'var(--dark-1)' }}>
+      <section className="py-36 md:px-20 md:py-40 divider" style={{ background: isElite ? '#07080b' : 'var(--dark-1)' }}>
         <FadeUp>
           <p className="mb-8 text-xs uppercase tracking-[0.5em]" style={{ color: t.color }}>About this program</p>
           <div className="grid gap-10 md:grid-cols-[1fr_1.1fr] md:items-start max-w-7xl">
@@ -133,7 +133,7 @@ export function FXTierPage({ tier }: { tier: TierKey }) {
       </section>
 
       {/* ── CURRICULUM ── */}
-      <section className="px-8 py-36 md:px-20 md:py-40 divider" style={{ background: isElite ? '#090a0e' : 'var(--dark-2)' }}>
+      <section className="py-36 md:px-20 md:py-40 divider" style={{ background: isElite ? '#090a0e' : 'var(--dark-2)' }}>
         <FadeUp>
           <p className="mb-8 text-xs uppercase tracking-[0.5em]" style={{ color: 'rgba(200,192,175,0.4)' }}>Curriculum</p>
           <h2 className="serif text-[8vw] leading-[0.88] tracking-[-0.06em] mb-16 md:text-[5vw]">
@@ -153,7 +153,7 @@ export function FXTierPage({ tier }: { tier: TierKey }) {
       </section>
 
       {/* ── MODULES ── */}
-      <section className="px-8 py-36 md:px-20 divider" style={{ background: isElite ? '#07080b' : 'var(--dark-1)' }}>
+      <section className="py-36 md:px-20 divider" style={{ background: isElite ? '#07080b' : 'var(--dark-1)' }}>
         <FadeUp>
           <p className="mb-8 text-xs uppercase tracking-[0.5em]" style={{ color: 'rgba(200,192,175,0.4)' }}>Sample modules</p>
           <h2 className="serif text-[8vw] leading-[0.88] tracking-[-0.06em] mb-12 md:text-[5vw]">
@@ -172,7 +172,7 @@ export function FXTierPage({ tier }: { tier: TierKey }) {
       </section>
 
       {/* ── CTA ── */}
-      <section className="relative overflow-hidden px-8 py-32 md:px-20 md:py-36 divider" style={{ background: isElite ? '#090a0e' : 'var(--dark-2)' }}>
+      <section className="relative overflow-hidden px-8 md:px-20 py-36 md:py-36 divider" style={{ background: isElite ? '#090a0e' : 'var(--dark-2)' }}>
         <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
         <FadeUp>
           <div className="mx-auto flex max-w-7xl flex-col gap-12 md:flex-row md:items-end md:justify-between">

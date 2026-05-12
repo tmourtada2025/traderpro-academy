@@ -2,7 +2,7 @@ import { Link } from 'wouter';
 
 export default function Footer() {
   return (
-    <footer style={{ background: 'var(--dark-1)', borderTop: '0.5px solid var(--border)' }} className="px-10 py-20 md:px-20">
+    <footer style={{ background: 'var(--dark-1)', borderTop: '0.5px solid var(--border)' }} className="px-8 py-16 md:px-14">
       <div className="mx-auto max-w-7xl grid grid-cols-1 gap-12 md:grid-cols-3">
         <div>
           <div className="font-serif text-2xl text-stone-100 mb-3">TraderPro</div>

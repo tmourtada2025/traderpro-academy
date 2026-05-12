@@ -190,16 +190,16 @@ export function MarketStrip() {
 
   return (
     <div style={{ background: '#060709', borderBottom: '0.5px solid rgba(180,140,20,0.2)' }}>
-      <div className="overflow-hidden py-2" style={{ borderBottom: '0.5px solid var(--border)' }}>
-        <div className="ticker-fast">
-          <div className="flex">{tickerRow}</div>
-          <div className="flex">{tickerRow}</div>
+      <div style={{ overflow: 'hidden', borderBottom: '0.5px solid var(--border)', padding: '6px 0' }}>
+        <div className="ticker-fast" style={{ whiteSpace: 'nowrap', minWidth: 'max-content' }}>
+          <span className="inline-flex">{tickerRow}</span>
+          <span className="inline-flex">{tickerRow}</span>
         </div>
       </div>
-      <div className="overflow-hidden py-2">
-        <div className="ticker-slow">
-          <div className="flex">{newsRow}</div>
-          <div className="flex">{newsRow}</div>
+      <div style={{ overflow: 'hidden', padding: '6px 0' }}>
+        <div className="ticker-slow" style={{ whiteSpace: 'nowrap', minWidth: 'max-content' }}>
+          <span className="inline-flex">{newsRow}</span>
+          <span className="inline-flex">{newsRow}</span>
         </div>
       </div>
     </div>
