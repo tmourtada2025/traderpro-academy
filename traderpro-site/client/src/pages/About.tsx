@@ -31,14 +31,14 @@ export default function About() {
             <span className="block translate-x-[6vw] italic" style={{ color: 'rgba(235,228,210,0.7)' }}>For traders.</span>
           </motion.h1>
           <motion.p initial={{ opacity: 0, y: 32 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 0.45 }}
-            className="mt-10 text-lg leading-relaxed md:ml-[40vw] md:max-w-md md:text-xl" style={{ color: 'rgba(200,192,175,0.68)' }}>
+            className="mt-10 text-lg leading-relaxed md:ml-[42vw] md:max-w-lg md:text-xl" style={{ color: 'rgba(200,192,175,0.68)' }}>
             TradePro Academy was built on a single conviction: real traders need real education, not motivational rhetoric.
           </motion.p>
         </HeroParallax>
       </section>
 
       {/* ── WHO WE ARE ── */}
-      <section className="px-5 py-28 md:px-12 md:py-40 divider" style={{ background: 'var(--dark-1)' }}>
+      <section className="px-8 py-32 md:px-20 md:py-40 divider" style={{ background: 'var(--dark-1)' }}>
         <FadeUp>
           <p className="mb-8 text-xs uppercase tracking-[0.5em]" style={{ color: 'rgba(200,192,175,0.45)' }}>Who we are</p>
           <h2 className="serif text-[10vw] leading-[0.86] tracking-[-0.07em] md:text-[6vw]">
@@ -46,7 +46,7 @@ export default function About() {
             <span className="block translate-x-[8vw]" style={{ color: 'rgba(200,192,175,0.5)' }}>We are market practitioners.</span>
           </h2>
         </FadeUp>
-        <FadeUp delay={200} className="mt-16 grid gap-10 md:grid-cols-[1fr_1.1fr] md:items-start max-w-6xl">
+        <FadeUp delay={200} className="mt-16 grid gap-10 md:grid-cols-[1fr_1.1fr] md:items-start max-w-7xl">
           <p className="text-2xl leading-tight serif md:text-3xl" style={{ color: 'rgba(200,192,175,0.82)' }}>
             TradePro Academy is a dynamic team of financial experts, seasoned educators, and market practitioners united by a shared vision.
           </p>
@@ -59,7 +59,7 @@ export default function About() {
       </section>
 
       {/* ── VISION / MISSION ── */}
-      <section className="px-5 py-28 md:px-12 md:py-40 divider" style={{ background: 'var(--dark-2)' }}>
+      <section className="px-8 py-32 md:px-20 md:py-40 divider" style={{ background: 'var(--dark-2)' }}>
         <div className="mx-auto max-w-7xl grid grid-cols-1 gap-24 md:grid-cols-2">
           <FadeUp>
             <p className="mb-6 text-xs uppercase tracking-[0.45em]" style={{ color: 'var(--gold)' }}>Our Vision</p>
@@ -83,14 +83,14 @@ export default function About() {
       </section>
 
       {/* ── WHAT WE OFFER ── */}
-      <section className="px-5 py-28 md:px-12 md:py-40 divider" style={{ background: 'var(--dark-1)' }}>
+      <section className="px-8 py-32 md:px-20 md:py-40 divider" style={{ background: 'var(--dark-1)' }}>
         <FadeUp>
           <p className="mb-8 text-xs uppercase tracking-[0.5em]" style={{ color: 'rgba(200,192,175,0.45)' }}>Beyond the curriculum</p>
           <h2 className="serif text-[10vw] leading-[0.86] tracking-[-0.07em] md:text-[6vw] max-w-[16ch]">
             Education that goes beyond the screen.
           </h2>
         </FadeUp>
-        <div className="mt-16 max-w-6xl grid grid-cols-1 gap-0 md:grid-cols-2">
+        <div className="mt-16 max-w-7xl grid grid-cols-1 gap-0 md:grid-cols-2">
           {[
             { title: 'Remote & Online Learning', text: 'Structured online modules and real-time interactions with instructors and peers — learn wherever you are, at your own pace.' },
             { title: 'Live Webinars', text: 'Regular webinars hosted by seasoned traders covering current market trends, advanced techniques, and practical insights with live Q&A.' },
@@ -108,14 +108,14 @@ export default function About() {
       </section>
 
       {/* ── TEAM ── */}
-      <section className="px-5 py-28 md:px-12 divider" style={{ background: 'var(--dark-2)' }}>
+      <section className="px-8 py-32 md:px-20 divider" style={{ background: 'var(--dark-2)' }}>
         <FadeUp>
           <p className="mb-4 text-xs uppercase tracking-[0.5em]" style={{ color: 'rgba(200,192,175,0.45)' }}>The team</p>
           <h2 className="serif text-[10vw] leading-[0.86] tracking-[-0.07em] mb-16 md:text-[6vw]">
             Built by <span className="italic" style={{ color: 'var(--gold-bright)' }}>practitioners.</span>
           </h2>
         </FadeUp>
-        <div className="grid grid-cols-1 gap-px md:grid-cols-3 max-w-5xl" style={{ background: 'var(--border)' }}>
+        <div className="grid grid-cols-1 gap-px md:grid-cols-3 max-w-6xl" style={{ background: 'var(--border)' }}>
           {instructors.map((inst, i) => (
             <FadeUp key={inst.name} delay={i * 100}>
               <div className="p-8" style={{ background: 'var(--dark-2)' }}>
@@ -130,7 +130,7 @@ export default function About() {
       </section>
 
       {/* ── CTA ── */}
-      <section className="relative overflow-hidden px-5 py-28 md:px-12 md:py-36 divider" style={{ background: 'var(--dark-1)' }}>
+      <section className="relative overflow-hidden px-8 py-32 md:px-20 md:py-36 divider" style={{ background: 'var(--dark-1)' }}>
         <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
         <FadeUp>
           <div className="mx-auto flex max-w-7xl flex-col gap-12 md:flex-row md:items-end md:justify-between">

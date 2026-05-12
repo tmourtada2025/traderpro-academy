@@ -51,7 +51,7 @@ export default function Home() {
 
           <motion.div
             initial={{ opacity: 0, y: 32 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 0.45 }}
-            className="mt-10 flex flex-col gap-5 md:ml-[45vw] md:mt-[-2rem] md:max-w-md"
+            className="mt-10 flex flex-col gap-5 md:ml-[46vw] md:mt-[-3rem] md:max-w-lg"
           >
             <p className="text-lg leading-relaxed md:text-xl" style={{ color: 'rgba(200,192,175,0.75)' }}>
               From market foundations to professional execution — TradePro Academy delivers structured Forex and Crypto education in English, Arabic, and Spanish.
@@ -65,8 +65,8 @@ export default function Home() {
 
         {/* Stats strip — below hero content, scrolls with page */}
         <div className="absolute bottom-0 left-0 right-0 z-10" style={{ borderTop: '0.5px solid var(--border)' }}>
-          <div className="px-6 py-12 md:px-12" style={{ background: 'rgba(8,9,12,0.85)' }}>
-            <div className="mx-auto max-w-5xl grid grid-cols-2 gap-10 md:grid-cols-4 md:gap-4">
+          <div className="px-10 py-16 md:px-20" style={{ background: 'rgba(8,9,12,0.85)' }}>
+            <div className="mx-auto max-w-6xl grid grid-cols-2 gap-10 md:grid-cols-4 md:gap-4">
               {[
                 { value: 400, suffix: '+', label: 'Hours of Content' },
                 { value: 3, suffix: '', label: 'Languages' },
@@ -86,7 +86,7 @@ export default function Home() {
       <MarketStrip />
 
       {/* ── FLOW STATEMENT ── */}
-      <section className="relative overflow-hidden px-5 py-28 md:px-12 md:py-40 divider" style={{ background: 'var(--dark-1)' }}>
+      <section className="relative overflow-hidden px-8 py-32 md:px-20 md:py-40 divider" style={{ background: 'var(--dark-1)' }}>
         <FadeUp>
           <p className="mb-8 text-xs uppercase tracking-[0.5em]" style={{ color: 'rgba(200,192,175,0.45)' }}>The approach</p>
           <h2 className="serif text-[13vw] leading-[0.86] tracking-[-0.075em] md:text-[8vw]">
@@ -104,12 +104,12 @@ export default function Home() {
       </section>
 
       {/* ── PROGRAMS — GPT numbered layout ── */}
-      <section className="relative overflow-hidden px-5 py-28 md:px-12 md:py-44 divider" style={{ background: 'var(--dark-2)' }}>
+      <section className="relative overflow-hidden px-8 py-32 md:px-20 md:py-44 divider" style={{ background: 'var(--dark-2)' }}>
         <div className="absolute right-[-20vw] top-[10%] text-[28vw] font-black uppercase leading-none tracking-[-0.12em] serif" style={{ color: 'rgba(255,255,255,0.018)', pointerEvents: 'none' }}>EDGE</div>
         <div className="mx-auto max-w-7xl">
           {programs.map(({ num, title, sub, text, href }, i) => (
             <FadeUp key={title} delay={i * 80}>
-              <div className={`relative flex flex-col gap-6 py-12 md:grid md:grid-cols-[0.35fr_1fr_0.75fr] md:items-center ${i === 1 ? 'md:translate-x-16' : i === 2 ? 'md:-translate-x-8' : ''}`}
+              <div className={`relative flex flex-col gap-6 py-12 md:grid md:grid-cols-[0.35fr_1fr_0.75fr] md:items-center ${i === 1 ? 'md:translate-x-[5vw]' : i === 2 ? 'md:-translate-x-[3vw]' : ''}`}
                 style={{ borderTop: '0.5px solid rgba(255,255,255,0.07)' }}>
                 <span className="serif text-7xl italic" style={{ color: 'rgba(200,192,175,0.3)' }}>{num}</span>
                 <div>
@@ -127,7 +127,7 @@ export default function Home() {
       </section>
 
       {/* ── PROOF — testimonials ── */}
-      <section className="relative px-5 py-28 md:px-12 md:py-40 divider" style={{ background: 'var(--dark-1)' }}>
+      <section className="relative px-8 py-32 md:px-20 md:py-40 divider" style={{ background: 'var(--dark-1)' }}>
         <div className="absolute left-1/2 top-1/2 h-[55rem] w-[55rem] -translate-x-1/2 -translate-y-1/2 rounded-full blur-2xl pointer-events-none"
           style={{ background: 'radial-gradient(circle, rgba(210,190,145,0.07), rgba(40,68,95,0.06) 38%, transparent 70%)' }} />
         <FadeUp>
@@ -136,7 +136,7 @@ export default function Home() {
             Proof in<span className="block" style={{ color: 'rgba(200,192,175,0.55)' }}>execution.</span>
           </h2>
         </FadeUp>
-        <div className="mx-auto mt-16 max-w-6xl grid grid-cols-1 gap-px md:grid-cols-3" style={{ background: 'var(--border)' }}>
+        <div className="mx-auto mt-16 max-w-7xl grid grid-cols-1 gap-px md:grid-cols-3" style={{ background: 'var(--border)' }}>
           {testimonials.map((t, i) => (
             <FadeUp key={t.name} delay={i * 100}>
               <div className="p-8 h-full" style={{ background: 'var(--dark-1)' }}>
@@ -157,7 +157,7 @@ export default function Home() {
       </section>
 
       {/* ── ACCESS / CTA — exact GPT layout ── */}
-      <section className="relative overflow-hidden px-5 py-28 md:px-12 md:py-36 divider" style={{ background: 'var(--dark-2)' }}>
+      <section className="relative overflow-hidden px-8 py-32 md:px-20 md:py-36 divider" style={{ background: 'var(--dark-2)' }}>
         <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
         <FadeUp>
           <div className="mx-auto flex max-w-7xl flex-col gap-12 md:flex-row md:items-end md:justify-between">

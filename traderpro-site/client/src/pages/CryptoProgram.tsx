@@ -25,7 +25,7 @@ export default function CryptoProgram() {
             <span className="block translate-x-[8vw] italic" style={{ color: 'rgba(200,192,175,0.4)' }}>On the horizon.</span>
           </motion.h1>
           <motion.div initial={{ opacity: 0, y: 32 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 0.45 }}
-            className="mt-10 md:ml-[45vw] md:max-w-md">
+            className="mt-10 md:ml-[46vw] md:max-w-lg">
             <p className="text-lg leading-relaxed mb-8" style={{ color: 'rgba(200,192,175,0.6)' }}>
               The same structured, professional-grade education that powers our FX program — applied to crypto markets. Bitcoin, Ethereum, DeFi, and beyond. Coming soon.
             </p>

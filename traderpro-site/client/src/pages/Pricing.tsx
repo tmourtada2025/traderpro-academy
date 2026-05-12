@@ -78,7 +78,7 @@ export default function Pricing() {
       </section>
 
       {/* ── TOGGLE ── */}
-      <section className="px-5 py-8 md:px-12 divider">
+      <section className="px-8 py-10 md:px-20 divider">
         <div className="flex items-center gap-8">
           <button onClick={() => setAnnual(false)} className={`text-[11px] uppercase tracking-[0.3em] pb-1 transition-all ${!annual ? 'text-stone-100 border-b border-[var(--gold-solid)]' : 'text-stone-400 hover:text-stone-200'}`}>
             Monthly
@@ -92,7 +92,7 @@ export default function Pricing() {
 
       {/* ── TIERS ── */}
       <section className="px-5 pb-20 md:px-12 divider">
-        <div className="grid grid-cols-1 md:grid-cols-3 max-w-6xl" style={{ borderTop: '0.5px solid var(--border)' }}>
+        <div className="grid grid-cols-1 md:grid-cols-3 max-w-7xl" style={{ borderTop: '0.5px solid var(--border)' }}>
           {tiers.map((t, i) => (
             <FadeUp key={t.name} delay={i * 80}>
               <div className="p-8 h-full" style={{
@@ -126,11 +126,11 @@ export default function Pricing() {
       </section>
 
       {/* ── FEATURE TABLE ── */}
-      <section className="px-5 py-20 md:px-12 divider" style={{ background: 'var(--dark-2)' }}>
+      <section className="px-8 py-32 md:px-20 divider" style={{ background: 'var(--dark-2)' }}>
         <FadeUp>
           <p className="mb-8 text-xs uppercase tracking-[0.5em]" style={{ color: 'rgba(200,192,175,0.4)' }}>What's included</p>
         </FadeUp>
-        <div className="max-w-5xl overflow-x-auto">
+        <div className="max-w-6xl overflow-x-auto">
           <table className="w-full">
             <thead>
               <tr style={{ borderBottom: '0.5px solid var(--border)' }}>
@@ -155,7 +155,7 @@ export default function Pricing() {
       </section>
 
       {/* ── PAYMENT METHODS ── */}
-      <section className="px-5 py-12 md:px-12 divider" style={{ background: 'var(--dark-1)' }}>
+      <section className="px-8 py-16 md:px-20 divider" style={{ background: 'var(--dark-1)' }}>
         <div className="text-center">
           <div className="text-[10px] uppercase tracking-[0.45em] mb-5" style={{ color: 'rgba(200,192,175,0.35)' }}>Accepted payment methods</div>
           <div className="flex flex-wrap justify-center gap-x-2 gap-y-1">
@@ -170,14 +170,14 @@ export default function Pricing() {
       </section>
 
       {/* ── FAQ ── */}
-      <section className="px-5 py-24 md:px-12 divider" style={{ background: 'var(--dark-2)' }}>
+      <section className="px-8 py-36 md:px-20 divider" style={{ background: 'var(--dark-2)' }}>
         <FadeUp>
           <p className="mb-4 text-xs uppercase tracking-[0.5em]" style={{ color: 'rgba(200,192,175,0.4)' }}>FAQ</p>
           <h2 className="serif text-[10vw] leading-[0.86] tracking-[-0.07em] mb-12 md:text-[5vw]">
             Common <span className="italic" style={{ color: 'var(--gold-bright)' }}>questions.</span>
           </h2>
         </FadeUp>
-        <div className="max-w-2xl">
+        <div className="max-w-3xl">
           {faqs.map(([q, a], i) => (
             <div key={i} style={{ borderTop: '0.5px solid var(--border)' }}>
               <button onClick={() => setOpenFaq(openFaq === i ? null : i)} className="w-full flex items-center justify-between py-5 text-left group">

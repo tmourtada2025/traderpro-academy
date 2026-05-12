@@ -104,7 +104,7 @@ export function FXTierPage({ tier }: { tier: TierKey }) {
             <span className="block translate-x-[5vw] italic" style={{ color: t.color }}>{t.title.split(' ').slice(2).join(' ')}</span>
           </motion.h1>
           <motion.div initial={{ opacity: 0, y: 32 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 0.45 }}
-            className="mt-10 md:ml-[42vw] md:max-w-md">
+            className="mt-10 md:ml-[44vw] md:max-w-lg">
             <div className="serif text-3xl mb-3" style={{ color: t.color, letterSpacing: '-0.04em' }}>
               {t.price}{t.trial && <span className="text-sm ml-2" style={{ color: 'rgba(200,192,175,0.5)' }}>({t.trial})</span>}
             </div>
@@ -120,10 +120,10 @@ export function FXTierPage({ tier }: { tier: TierKey }) {
       </section>
 
       {/* ── DESCRIPTION ── */}
-      <section className="px-5 py-24 md:px-12 md:py-36 divider" style={{ background: isElite ? '#07080b' : 'var(--dark-1)' }}>
+      <section className="px-8 py-36 md:px-20 md:py-40 divider" style={{ background: isElite ? '#07080b' : 'var(--dark-1)' }}>
         <FadeUp>
           <p className="mb-8 text-xs uppercase tracking-[0.5em]" style={{ color: t.color }}>About this program</p>
-          <div className="grid gap-10 md:grid-cols-[1fr_1.1fr] md:items-start max-w-6xl">
+          <div className="grid gap-10 md:grid-cols-[1fr_1.1fr] md:items-start max-w-7xl">
             <h2 className="serif text-[8vw] leading-[0.88] tracking-[-0.06em] md:text-[4vw]">
               What you will learn — and how you will trade.
             </h2>
@@ -133,14 +133,14 @@ export function FXTierPage({ tier }: { tier: TierKey }) {
       </section>
 
       {/* ── CURRICULUM ── */}
-      <section className="px-5 py-24 md:px-12 md:py-36 divider" style={{ background: isElite ? '#090a0e' : 'var(--dark-2)' }}>
+      <section className="px-8 py-36 md:px-20 md:py-40 divider" style={{ background: isElite ? '#090a0e' : 'var(--dark-2)' }}>
         <FadeUp>
           <p className="mb-8 text-xs uppercase tracking-[0.5em]" style={{ color: 'rgba(200,192,175,0.4)' }}>Curriculum</p>
           <h2 className="serif text-[8vw] leading-[0.88] tracking-[-0.06em] mb-16 md:text-[5vw]">
             What's covered.
           </h2>
         </FadeUp>
-        <div className="grid grid-cols-1 gap-0 md:grid-cols-2 max-w-5xl">
+        <div className="grid grid-cols-1 gap-0 md:grid-cols-2 max-w-6xl">
           {t.bullets.map((b, i) => (
             <FadeUp key={b} delay={i * 60}>
               <div className="flex items-start gap-4 py-4" style={{ borderBottom: '0.5px solid var(--border)' }}>
@@ -153,7 +153,7 @@ export function FXTierPage({ tier }: { tier: TierKey }) {
       </section>
 
       {/* ── MODULES ── */}
-      <section className="px-5 py-24 md:px-12 divider" style={{ background: isElite ? '#07080b' : 'var(--dark-1)' }}>
+      <section className="px-8 py-36 md:px-20 divider" style={{ background: isElite ? '#07080b' : 'var(--dark-1)' }}>
         <FadeUp>
           <p className="mb-8 text-xs uppercase tracking-[0.5em]" style={{ color: 'rgba(200,192,175,0.4)' }}>Sample modules</p>
           <h2 className="serif text-[8vw] leading-[0.88] tracking-[-0.06em] mb-12 md:text-[5vw]">
@@ -172,7 +172,7 @@ export function FXTierPage({ tier }: { tier: TierKey }) {
       </section>
 
       {/* ── CTA ── */}
-      <section className="relative overflow-hidden px-5 py-28 md:px-12 md:py-36 divider" style={{ background: isElite ? '#090a0e' : 'var(--dark-2)' }}>
+      <section className="relative overflow-hidden px-8 py-32 md:px-20 md:py-36 divider" style={{ background: isElite ? '#090a0e' : 'var(--dark-2)' }}>
         <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
         <FadeUp>
           <div className="mx-auto flex max-w-7xl flex-col gap-12 md:flex-row md:items-end md:justify-between">

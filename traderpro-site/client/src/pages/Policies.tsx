@@ -124,9 +124,9 @@ function PolicyPage({ slug }: { slug: PolicyKey }) {
         </HeroParallax>
       </section>
 
-      <section className="px-5 py-20 md:px-12 divider">
+      <section className="px-8 py-32 md:px-20 divider">
         <FadeUp>
-          <div className="max-w-3xl mx-auto">
+          <div className="max-w-4xl mx-auto">
             <div className="text-base leading-9 whitespace-pre-line" style={{ color: 'rgba(200,192,175,0.65)' }}>
               {p.body}
             </div>
