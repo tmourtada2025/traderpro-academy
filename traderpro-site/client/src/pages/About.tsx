@@ -32,14 +32,14 @@ export default function About() {
             <span className="block translate-x-[6vw] italic" style={{ color: 'rgba(235,228,210,0.7)' }}>For traders.</span>
           </motion.h1>
           <motion.p initial={{ opacity: 0, y: 32 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 0.45 }}
-            className="mt-16 text-lg leading-relaxed md:ml-[40vw] md:max-w-md md:text-xl" style={{ color: 'rgba(200,192,175,0.68)' }}>
+            className="hero-copy-right" style={{ color: 'rgba(200,192,175,0.68)' }}>
             TradePro Academy was built on a single conviction: real traders need real education, not motivational rhetoric.
           </motion.p>
         </HeroParallax>
       </section>
 
       {/* ── WHO WE ARE ── */}
-      <section className="divider" style={{ background: 'var(--dark-1)', padding: '7rem 0' }}>
+      <section className="section-body divider" style={{ background: 'var(--dark-1)' }}>
         <div className="section-content">
           <FadeUp>
             <p className="text-xs uppercase tracking-[0.5em] text-center mb-12" style={{ color: 'rgba(200,192,175,0.45)' }}>Who we are</p>
@@ -64,7 +64,7 @@ export default function About() {
       </section>
 
       {/* ── VISION / MISSION ── */}
-      <section className="divider" style={{ background: 'var(--dark-2)', padding: '7rem 0' }}>
+      <section className="section-body divider" style={{ background: 'var(--dark-2)' }}>
         <div className="section-content">
           <div className="grid grid-cols-1 gap-16 md:grid-cols-2">
             <FadeUp>
@@ -90,7 +90,7 @@ export default function About() {
       </section>
 
       {/* ── WHAT WE OFFER ── */}
-      <section className="divider" style={{ background: 'var(--dark-1)', padding: '7rem 0' }}>
+      <section className="section-body divider" style={{ background: 'var(--dark-1)' }}>
         <div className="section-content">
           <FadeUp>
             <p className="text-xs uppercase tracking-[0.5em] text-center mb-12" style={{ color: 'rgba(200,192,175,0.45)' }}>Beyond the curriculum</p>
@@ -117,7 +117,7 @@ export default function About() {
       </section>
 
       {/* ── TEAM ── */}
-      <section className="divider" style={{ background: 'var(--dark-2)', padding: '7rem 0' }}>
+      <section className="section-body divider" style={{ background: 'var(--dark-2)' }}>
         <div className="section-content">
           <FadeUp>
             <p className="text-xs uppercase tracking-[0.5em] text-center mb-12" style={{ color: 'rgba(200,192,175,0.45)' }}>The team</p>
@@ -141,7 +141,7 @@ export default function About() {
       </section>
 
       {/* ── CTA ── */}
-      <section className="relative divider" style={{ background: 'var(--dark-1)', padding: '7rem 0' }}>
+      <section className="relative section-body divider" style={{ background: 'var(--dark-1)' }}>
         <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
         <div className="section-content">
           <FadeUp>

@@ -65,7 +65,7 @@ export default function Home() {
       <MarketStrip />
 
       {/* ── FLOW STATEMENT ── */}
-      <section className="relative divider" style={{ background: 'var(--dark-1)', padding: '9rem 0' }}>
+      <section className="relative section-body divider" style={{ background: 'var(--dark-1)' }}>
         <div className="section-content">
           <FadeUp>
             <p className="text-xs uppercase tracking-[0.5em] text-center" style={{ color: 'rgba(200,192,175,0.45)', marginBottom: '2.5rem' }}>The approach</p>
@@ -88,7 +88,7 @@ export default function Home() {
       </section>
 
       {/* ── PROGRAMS ── */}
-      <section className="relative divider" style={{ background: 'var(--dark-2)', padding: '9rem 0' }}>
+      <section className="relative section-body divider" style={{ background: 'var(--dark-2)' }}>
         <div className="absolute right-[-20vw] top-[10%] serif font-black uppercase leading-none tracking-[-0.12em]" style={{ fontSize: '28vw', color: 'rgba(255,255,255,0.018)', pointerEvents: 'none' }}>EDGE</div>
         <div className="section-content">
           <FadeUp>
@@ -116,7 +116,7 @@ export default function Home() {
       </section>
 
       {/* ── PROOF ── */}
-      <section className="relative divider" style={{ background: 'var(--dark-1)', padding: '9rem 0' }}>
+      <section className="relative section-body divider" style={{ background: 'var(--dark-1)' }}>
         <div className="absolute left-1/2 top-1/2 h-[55rem] w-[55rem] -translate-x-1/2 -translate-y-1/2 rounded-full blur-2xl pointer-events-none"
           style={{ background: 'radial-gradient(circle, rgba(210,190,145,0.07), rgba(40,68,95,0.06) 38%, transparent 70%)' }} />
         <div className="section-content">
@@ -148,7 +148,7 @@ export default function Home() {
       </section>
 
       {/* ── CTA ── */}
-      <section className="relative divider" style={{ background: 'var(--dark-2)', padding: '9rem 0' }}>
+      <section className="relative section-body divider" style={{ background: 'var(--dark-2)' }}>
         <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
         <div className="section-content">
           <FadeUp>

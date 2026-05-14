@@ -118,7 +118,7 @@ function PolicyPage({ slug }: { slug: PolicyKey }) {
             {p.title}
           </motion.h1>
           <motion.p initial={{ opacity: 0, y: 32 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 0.45 }}
-            className="mt-10 text-base max-w-lg" style={{ color: 'rgba(200,192,175,0.55)' }}>
+            className="hero-copy-right mt-4" style={{ color: 'rgba(200,192,175,0.55)' }}>
             {p.sub}
           </motion.p>
         </HeroParallax>

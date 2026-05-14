@@ -68,14 +68,14 @@ export default function Pricing() {
             <span className="block translate-x-[6vw] italic" style={{ color: 'rgba(200,192,175,0.5)' }}>No hidden fees.</span>
           </motion.h1>
           <motion.p initial={{ opacity: 0, y: 32 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 0.45 }}
-            className="mt-8 text-base md:ml-[42vw] md:max-w-sm" style={{ color: 'rgba(200,192,175,0.6)' }}>
+            className="hero-copy-right" style={{ color: 'rgba(200,192,175,0.6)' }}>
             Choose the plan that fits your learning stage. Cancel anytime.
           </motion.p>
         </HeroParallax>
       </section>
 
       {/* ── TOGGLE ── */}
-      <section className="section-body divider" style={{ paddingTop: "2rem", paddingBottom: "1.5rem" }}>
+      <section className="section-body divider">
         <div className="section-content">
           <div className="flex items-center gap-8">
             <button onClick={() => setAnnual(false)} className={`text-[11px] uppercase tracking-[0.3em] pb-1 transition-all ${!annual ? 'text-stone-100 border-b border-[var(--gold-solid)]' : 'text-stone-400 hover:text-stone-200'}`}>
@@ -90,7 +90,7 @@ export default function Pricing() {
       </section>
 
       {/* ── TIERS ── */}
-      <section className="section-body divider" style={{ paddingTop: "2rem" }}>
+      <section className="section-body divider">
         <div className="section-content">
           <div className="grid grid-cols-1 md:grid-cols-3" style={{ borderTop: '0.5px solid var(--border)' }}>
             {tiers.map((t, i) => (
@@ -103,7 +103,7 @@ export default function Pricing() {
                   {t.badge && (
                     <div className="text-[9px] uppercase tracking-[0.3em] mb-4 inline-block px-3 py-1" style={{ border: '0.5px solid var(--gold-solid)', color: 'var(--gold-bright)' }}>{t.badge}</div>
                   )}
-                  <h3 className="serif text-2xl mb-2" style={{ letterSpacing: '-0.03em' }}>{t.name}</h3>
+                  <h3 className="serif mb-2" style={{ fontSize: 'clamp(1.4rem, 2.5vw, 2rem)', letterSpacing: '-0.04em', lineHeight: 1.1 }}>{t.name}</h3>
                   <div className="serif mb-1" style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', color: 'rgba(235,228,210,0.95)', letterSpacing: '-0.04em', lineHeight: 1 }}>
                     ${price(t.mo)}<span className="text-sm" style={{ color: 'var(--stone-dim)' }}>{annual ? '/yr' : '/mo'}</span>
                   </div>
@@ -127,7 +127,7 @@ export default function Pricing() {
       </section>
 
       {/* ── FEATURE TABLE ── */}
-      <section className="py-28 divider" style={{ background: 'var(--dark-2)' }}>
+      <section className="section-body divider" style={{ background: 'var(--dark-2)' }}>
         <div className="section-content">
           <FadeUp>
             <p className="mb-10 text-xs uppercase tracking-[0.5em] text-center" style={{ color: 'rgba(200,192,175,0.4)' }}>What's included</p>
@@ -158,7 +158,7 @@ export default function Pricing() {
       </section>
 
       {/* ── PAYMENT METHODS ── */}
-      <section className="py-8 divider" style={{ background: 'var(--dark-1)' }}>
+      <section className="section-body divider" style={{ background: 'var(--dark-1)' }}>
         <div className="section-content">
           <div className="text-center">
             <div className="text-[10px] uppercase tracking-[0.45em] mb-5" style={{ color: 'rgba(200,192,175,0.35)' }}>Accepted payment methods</div>
@@ -175,7 +175,7 @@ export default function Pricing() {
       </section>
 
       {/* ── FAQ ── */}
-      <section className="py-12 divider" style={{ background: 'var(--dark-2)' }}>
+      <section className="section-body divider" style={{ background: 'var(--dark-2)' }}>
         <div className="section-content">
           <FadeUp>
             <p className="mb-4 text-xs uppercase tracking-[0.5em] text-center" style={{ color: 'rgba(200,192,175,0.4)' }}>FAQ</p>

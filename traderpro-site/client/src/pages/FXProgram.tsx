@@ -106,7 +106,7 @@ export function FXTierPage({ tier }: { tier: TierKey }) {
           </motion.h1>
           <motion.div initial={{ opacity: 0, y: 32 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 0.45 }}
             className="hero-copy-right mt-10">
-            <div className="serif text-3xl mb-3" style={{ color: t.color, letterSpacing: '-0.04em' }}>
+            <div className="serif mb-3" style={{ fontSize: 'clamp(1.8rem, 3vw, 2.5rem)', color: t.color, letterSpacing: '-0.04em' }}>
               {t.price}{t.trial && <span className="text-sm ml-2" style={{ color: 'rgba(200,192,175,0.5)' }}>({t.trial})</span>}
             </div>
             <p className="text-lg leading-relaxed mb-6" style={{ color: 'rgba(200,192,175,0.68)' }}>{t.tagline}</p>
@@ -121,7 +121,8 @@ export function FXTierPage({ tier }: { tier: TierKey }) {
       </section>
 
       {/* ── DESCRIPTION ── */}
-      <section className="py-36 md:py-40 divider" style={{ background: isElite ? '#07080b' : 'var(--dark-1)' }}>
+      <section className="section-body divider" style={{ background: isElite ? '#07080b' : 'var(--dark-1)' }}>
+        <div className="section-content">
         <FadeUp>
           <p className="mb-8 text-xs uppercase tracking-[0.5em]" style={{ color: t.color }}>About this program</p>
           <div className="mx-auto px-8 md:px-20 grid gap-10 md:grid-cols-[1fr_1.1fr] md:items-start max-w-7xl">
@@ -131,10 +132,12 @@ export function FXTierPage({ tier }: { tier: TierKey }) {
             <p className="text-base leading-8" style={{ color: 'rgba(200,192,175,0.6)' }}>{t.description}</p>
           </div>
         </FadeUp>
+        </div>
       </section>
 
       {/* ── CURRICULUM ── */}
-      <section className="py-36 md:py-40 divider" style={{ background: isElite ? '#090a0e' : 'var(--dark-2)' }}>
+      <section className="section-body divider" style={{ background: isElite ? '#090a0e' : 'var(--dark-2)' }}>
+        <div className="section-content">
         <FadeUp>
           <p className="mb-8 text-xs uppercase tracking-[0.5em]" style={{ color: 'rgba(200,192,175,0.4)' }}>Curriculum</p>
           <h2 className="serif text-[8vw] leading-[0.88] tracking-[-0.06em] mb-16 md:text-[5vw]">
@@ -151,10 +154,12 @@ export function FXTierPage({ tier }: { tier: TierKey }) {
             </FadeUp>
           ))}
         </div>
+        </div>
       </section>
 
       {/* ── MODULES ── */}
       <section className="section-body divider" style={{ background: isElite ? '#07080b' : 'var(--dark-1)' }}>
+        <div className="section-content">
         <FadeUp>
           <p className="mb-8 text-xs uppercase tracking-[0.5em]" style={{ color: 'rgba(200,192,175,0.4)' }}>Sample modules</p>
           <h2 className="serif text-[8vw] leading-[0.88] tracking-[-0.06em] mb-12 md:text-[5vw]">
@@ -170,10 +175,12 @@ export function FXTierPage({ tier }: { tier: TierKey }) {
             </FadeUp>
           ))}
         </div>
+        </div>
       </section>
 
       {/* ── CTA ── */}
       <section className="relative section-body divider" style={{ background: isElite ? '#090a0e' : 'var(--dark-2)' }}>
+        <div className="section-content">
         <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
         <FadeUp>
           <div className="mx-auto px-8 md:px-20 flex max-w-7xl flex-col gap-12 md:flex-row md:items-end md:justify-between">
@@ -181,7 +188,7 @@ export function FXTierPage({ tier }: { tier: TierKey }) {
               {tier === 'starter' ? 'Start here.\nStart now.' : tier === 'skillbuilder' ? 'Build your edge.' : 'Master the market.'}
             </h2>
             <div className="max-w-md space-y-6">
-              <div className="serif text-4xl" style={{ color: t.color, letterSpacing: '-0.04em' }}>{t.price}</div>
+              <div className="serif" style={{ fontSize: 'clamp(2rem, 3.5vw, 3rem)', color: t.color, letterSpacing: '-0.04em', lineHeight: 1 }}>{t.price}</div>
               {t.trial && <p className="text-sm" style={{ color: 'rgba(200,192,175,0.5)' }}>{t.trial} — no credit card required.</p>}
               <MagneticButton href="/pricing">
                 {t.trial ? 'Start 7-day free trial' : 'Enroll now'}
@@ -189,6 +196,7 @@ export function FXTierPage({ tier }: { tier: TierKey }) {
             </div>
           </div>
         </FadeUp>
+        </div>
       </section>
 
       <Footer />
