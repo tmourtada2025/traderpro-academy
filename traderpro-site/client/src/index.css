@@ -129,8 +129,8 @@ body {
   margin: 0 auto;
 }
 .hero-shell {
-  padding-left: clamp(1.5rem, 5vw, 6rem);
-  padding-right: clamp(1.5rem, 5vw, 6rem);
+  padding-left: clamp(2rem, 7vw, 9rem);
+  padding-right: clamp(2rem, 7vw, 9rem);
 }
 .hero-title {
   font-size: clamp(4.4rem, 12vw, 11rem);
@@ -144,11 +144,12 @@ body {
 }
 .hero-copy {
   max-width: 29rem;
+  margin-top: 4rem;
 }
 @media (min-width: 768px) {
   .hero-copy {
-    margin-left: min(45vw, 42rem);
-    margin-top: -2rem;
+    margin-left: min(46vw, 44rem);
+    margin-top: 3rem;
   }
 }
 .stats-strip {
