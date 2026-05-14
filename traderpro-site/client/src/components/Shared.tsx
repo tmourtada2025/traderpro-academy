@@ -16,14 +16,14 @@ export function ArrowIcon({ size = 15, className = '' }: { size?: number; classN
 
 interface MagProps { children: ReactNode; subtle?: boolean; href?: string; onClick?: () => void; }
 export function MagneticButton({ children, subtle = false, href, onClick }: MagProps) {
-  const cls = `group relative overflow-hidden rounded-full px-6 py-3 text-xs uppercase tracking-[0.32em] transition cursor-pointer ${
+  const cls = `group relative inline-flex w-fit items-center justify-center overflow-hidden rounded-full px-6 py-3 text-xs uppercase tracking-[0.32em] transition cursor-pointer ${
     subtle
       ? 'border border-white/15 text-stone-200 hover:border-white/35'
       : 'bg-stone-100 text-black shadow-[0_0_50px_rgba(230,220,190,0.18)]'
   }`;
   const inner = (
     <>
-      <span className="relative z-10 flex items-center gap-3">
+      <span className="relative z-10 flex items-center justify-center gap-3 whitespace-nowrap">
         {children}
         <ArrowIcon size={15} className="transition group-hover:translate-x-1 group-hover:-translate-y-1"/>
       </span>
@@ -81,7 +81,7 @@ export function HeroParallax({ children }: { children: ReactNode }) {
   const y = useTransform(scrollYProgress, [0, 0.35], [0, -180]);
   const opacity = useTransform(scrollYProgress, [0, 0.25], [1, 0.3]);
   return (
-    <motion.div style={{ y, opacity }} className="relative z-10 flex min-h-screen flex-col justify-center px-8 pt-24 md:px-20 lg:px-24">
+    <motion.div style={{ y, opacity }} className="hero-shell relative z-10 flex min-h-screen flex-col justify-center pt-24">
       {children}
     </motion.div>
   );
@@ -114,28 +114,15 @@ export function StatsStrip() {
     { value: '3', label: 'Program Tiers' },
     { value: 'MENA · LATAM · SEA', label: 'Global Reach' },
   ];
-  const Diamond = () => (
-    <span style={{ color: 'rgba(235,228,210,0.3)', fontSize: '10px', margin: '0 2rem' }}>◆</span>
-  );
-  const content = stats.map((s, i) => (
-    <span key={i} className="inline-flex items-center gap-4 whitespace-nowrap">
-      <span className="serif font-bold" style={{ fontSize: 'clamp(2.2rem, 4vw, 3.5rem)', letterSpacing: '-0.04em', lineHeight: 1, color: 'rgba(235,228,210,0.95)' }}>{s.value}</span>
-      <span className="text-[10px] uppercase tracking-[0.4em]" style={{ color: 'rgba(200,192,175,0.45)' }}>{s.label}</span>
-      {i < stats.length - 1 && <Diamond />}
-    </span>
-  ));
 
   return (
-    <div style={{ borderTop: '0.5px solid rgba(255,255,255,0.06)', borderBottom: '0.5px solid rgba(180,140,20,0.2)', background: 'rgba(8,9,12,0.95)', overflow: 'hidden', padding: '2.5rem 0' }}>
-      <div className="flex items-center justify-center gap-0 px-8 md:px-20 flex-wrap gap-y-4">
-        {stats.map((s, i) => (
-          <span key={i} className="inline-flex items-center">
-            <span className="inline-flex items-center gap-3 px-6">
-              <span className="serif font-bold" style={{ fontSize: 'clamp(2rem, 3.5vw, 3rem)', letterSpacing: '-0.04em', lineHeight: 1, color: 'rgba(235,228,210,0.95)' }}>{s.value}</span>
-              <span className="text-[10px] uppercase tracking-[0.4em]" style={{ color: 'rgba(200,192,175,0.45)' }}>{s.label}</span>
-            </span>
-            {i < stats.length - 1 && <span style={{ color: 'rgba(235,228,210,0.25)', fontSize: '8px' }}>◆</span>}
-          </span>
+    <div className="stats-strip">
+      <div className="stats-grid">
+        {stats.map((s) => (
+          <div key={s.label} className="stat-cell">
+            <span className="serif stat-value">{s.value}</span>
+            <span className="stat-label">{s.label}</span>
+          </div>
         ))}
       </div>
     </div>
