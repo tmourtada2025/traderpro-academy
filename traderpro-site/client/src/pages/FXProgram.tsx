@@ -85,7 +85,7 @@ export function FXTierPage({ tier }: { tier: TierKey }) {
       <Navigation />
 
       {/* ── HERO ── */}
-      <section className="relative min-h-[120vh] overflow-hidden" style={{ background: isElite ? '#07080b' : 'var(--dark-1)' }}>
+      <section className="relative overflow-hidden" style={{ minHeight: '75vh' }} style={{ background: isElite ? '#07080b' : 'var(--dark-1)' }}>
         <AmbientMarketLines />
         <OrbParallax style={{ right: '-10rem', top: '-6rem', width: '42rem', height: '42rem', background: `radial-gradient(circle at 35% 35%, ${t.color.replace('0.', '0.1')}, transparent 70%)` }} />
         <div className="absolute inset-0" style={{ background: `linear-gradient(to bottom, transparent 0%, ${isElite ? '#07080b' : 'var(--dark-1)'} 78%)` }} />
@@ -105,7 +105,7 @@ export function FXTierPage({ tier }: { tier: TierKey }) {
             <span className="block translate-x-[5vw] italic" style={{ color: t.color }}>{t.title.split(' ').slice(2).join(' ')}</span>
           </motion.h1>
           <motion.div initial={{ opacity: 0, y: 32 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 0.45 }}
-            className="hero-copy-right mt-10">
+            className="hero-copy-right" style={{ marginTop: '2.5rem' }}>
             <div className="serif mb-3" style={{ fontSize: 'clamp(1.8rem, 3vw, 2.5rem)', color: t.color, letterSpacing: '-0.04em' }}>
               {t.price}{t.trial && <span className="text-sm ml-2" style={{ color: 'rgba(200,192,175,0.5)' }}>({t.trial})</span>}
             </div>

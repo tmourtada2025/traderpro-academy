@@ -105,7 +105,7 @@ function PolicyPage({ slug }: { slug: PolicyKey }) {
       <Grain />
       <Navigation />
 
-      <section className="relative min-h-[50vh] overflow-hidden" style={{ background: 'var(--dark-1)' }}>
+      <section className="relative overflow-hidden" style={{ minHeight: '55vh' }} style={{ background: 'var(--dark-1)' }}>
         <AmbientMarketLines />
         <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, transparent 0%, var(--dark-1) 80%)' }} />
         <HeroParallax>
@@ -118,7 +118,7 @@ function PolicyPage({ slug }: { slug: PolicyKey }) {
             {p.title}
           </motion.h1>
           <motion.p initial={{ opacity: 0, y: 32 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 0.45 }}
-            className="hero-copy-right mt-4" style={{ color: 'rgba(200,192,175,0.55)' }}>
+            className="hero-sub" style={{ color: 'rgba(200,192,175,0.55)' }}>
             {p.sub}
           </motion.p>
         </HeroParallax>

@@ -53,7 +53,7 @@ export default function Pricing() {
       <Navigation />
 
       {/* ── HERO ── */}
-      <section className="relative min-h-[70vh] overflow-hidden" style={{ background: 'var(--dark-1)' }}>
+      <section className="relative overflow-hidden" style={{ minHeight: '72vh' }} style={{ background: 'var(--dark-1)' }}>
         <AmbientMarketLines />
         <OrbParallax style={{ right: '-8rem', top: '-4rem', width: '38rem', height: '38rem', background: 'radial-gradient(circle at 35% 35%, rgba(184,134,11,0.12), transparent 70%)' }} />
         <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, transparent 0%, var(--dark-1) 82%)' }} />
@@ -75,7 +75,7 @@ export default function Pricing() {
       </section>
 
       {/* ── TOGGLE ── */}
-      <section className="section-body divider">
+      <section className="divider" style={{ padding: '1.5rem 0' }}>
         <div className="section-content">
           <div className="flex items-center gap-8">
             <button onClick={() => setAnnual(false)} className={`text-[11px] uppercase tracking-[0.3em] pb-1 transition-all ${!annual ? 'text-stone-100 border-b border-[var(--gold-solid)]' : 'text-stone-400 hover:text-stone-200'}`}>
@@ -90,7 +90,7 @@ export default function Pricing() {
       </section>
 
       {/* ── TIERS ── */}
-      <section className="section-body divider">
+      <section className="divider" style={{ padding: '2rem 0 3rem' }}>
         <div className="section-content">
           <div className="grid grid-cols-1 md:grid-cols-3" style={{ borderTop: '0.5px solid var(--border)' }}>
             {tiers.map((t, i) => (
@@ -103,15 +103,15 @@ export default function Pricing() {
                   {t.badge && (
                     <div className="text-[9px] uppercase tracking-[0.3em] mb-4 inline-block px-3 py-1" style={{ border: '0.5px solid var(--gold-solid)', color: 'var(--gold-bright)' }}>{t.badge}</div>
                   )}
-                  <h3 className="serif mb-2" style={{ fontSize: 'clamp(1.4rem, 2.5vw, 2rem)', letterSpacing: '-0.04em', lineHeight: 1.1 }}>{t.name}</h3>
-                  <div className="serif mb-1" style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', color: 'rgba(235,228,210,0.95)', letterSpacing: '-0.04em', lineHeight: 1 }}>
+                  <h3 className="tier-name">{t.name}</h3>
+                  <div className="tier-price">
                     ${price(t.mo)}<span className="text-sm" style={{ color: 'var(--stone-dim)' }}>{annual ? '/yr' : '/mo'}</span>
                   </div>
                   {t.trial && <div className="text-xs mb-3 uppercase tracking-[0.25em]" style={{ color: 'rgba(200,192,175,0.5)' }}>{t.trial}</div>}
-                  <p className="text-sm mb-6 mt-2" style={{ color: 'var(--stone-dim)' }}>{t.tagline}</p>
+                  <p className="tier-tagline">{t.tagline}</p>
                   <ul className="space-y-3 mb-8">
                     {t.bullets.map(b => (
-                      <li key={b} className="text-sm flex items-start gap-2" style={{ color: 'rgba(200,192,175,0.65)' }}>
+                      <li key={b} className="tier-bullet">
                         <span style={{ color: 'rgba(200,192,175,0.5)', marginTop: 2, flexShrink: 0 }}>▸</span>{b}
                       </li>
                     ))}

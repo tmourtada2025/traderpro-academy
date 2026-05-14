@@ -17,7 +17,7 @@ export default function About() {
       <Navigation />
 
       {/* ── HERO ── */}
-      <section className="relative min-h-[90vh] overflow-hidden" style={{ background: 'var(--dark-1)' }}>
+      <section className="relative overflow-hidden" style={{ minHeight: '75vh' }} style={{ background: 'var(--dark-1)' }}>
         <AmbientMarketLines />
         <OrbParallax style={{ right: '-12rem', top: '-6rem', width: '44rem', height: '44rem', background: 'radial-gradient(circle at 35% 35%, rgba(184,134,11,0.14), rgba(42,72,102,0.10) 40%, transparent 70%)' }} />
         <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, transparent 0%, var(--dark-1) 80%)' }} />
@@ -42,7 +42,7 @@ export default function About() {
       <section className="section-body divider" style={{ background: 'var(--dark-1)' }}>
         <div className="section-content">
           <FadeUp>
-            <p className="text-xs uppercase tracking-[0.5em] text-center mb-12" style={{ color: 'rgba(200,192,175,0.45)' }}>Who we are</p>
+            <p className="section-label text-center" style={{ color: 'rgba(200,192,175,0.45)' }}>Who we are</p>
             <h2 className="serif leading-[0.86] tracking-[-0.07em] text-center" style={{ fontSize: 'clamp(2.5rem, 10vw, 6rem)' }}>
               More than educators.
               <span className="block" style={{ paddingLeft: '8%', color: 'rgba(200,192,175,0.5)' }}>We are market practitioners.</span>
@@ -93,7 +93,7 @@ export default function About() {
       <section className="section-body divider" style={{ background: 'var(--dark-1)' }}>
         <div className="section-content">
           <FadeUp>
-            <p className="text-xs uppercase tracking-[0.5em] text-center mb-12" style={{ color: 'rgba(200,192,175,0.45)' }}>Beyond the curriculum</p>
+            <p className="section-label text-center" style={{ color: 'rgba(200,192,175,0.45)' }}>Beyond the curriculum</p>
             <h2 className="serif leading-[0.86] tracking-[-0.07em] text-center" style={{ fontSize: 'clamp(2.5rem, 8vw, 5rem)' }}>
               Education that goes beyond the screen.
             </h2>
