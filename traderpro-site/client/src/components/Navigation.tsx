@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'wouter';
 
 function MenuIcon() {
@@ -11,6 +11,13 @@ function CloseIcon() {
 export default function Navigation() {
   const [open, setOpen] = useState(false);
   const [location] = useLocation();
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 40);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
 
   const active = (path: string) =>
     location === path || location.startsWith(path + '/');
@@ -19,7 +26,15 @@ export default function Navigation() {
     `text-[11px] uppercase tracking-[0.28em] transition hover:text-white ${active(path) ? 'text-white' : 'text-stone-300/75'}`;
 
   return (
-    <header className="site-nav fixed left-0 right-0 top-0 z-40">
+    <header
+      className="site-nav fixed left-0 right-0 top-0 z-40"
+      style={{
+        background: scrolled ? 'rgba(8,9,12,0.97)' : 'transparent',
+        backdropFilter: scrolled ? 'blur(12px)' : 'none',
+        borderBottom: scrolled ? '0.5px solid rgba(255,255,255,0.06)' : 'none',
+        transition: 'background 0.3s ease, border-color 0.3s ease',
+      }}
+    >
       <div className="nav-inner flex items-center justify-between">
         {/* Logo */}
         <Link href="/">
