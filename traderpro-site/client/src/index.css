@@ -222,3 +222,47 @@ body {
   .stat-cell::after { content: none !important; }
   .stat-label { text-align: right; letter-spacing: 0.24em; }
 }
+
+/* ── ADDITIONAL LAYOUT CLASSES ────────────────────────────── */
+
+/* Page section vertical rhythm */
+.section-body {
+  padding-top: clamp(4rem, 8vw, 9rem);
+  padding-bottom: clamp(4rem, 8vw, 9rem);
+}
+
+/* Footer */
+.footer-inner {
+  padding: clamp(3rem, 5vw, 5rem) clamp(1.25rem, 4vw, 5rem);
+}
+
+/* FX/Crypto hero body copy offset */
+.hero-copy-right {
+  max-width: 30rem;
+}
+@media (min-width: 768px) {
+  .hero-copy-right {
+    margin-left: min(44vw, 40rem);
+    margin-top: -2rem;
+  }
+}
+
+/* Tier card internal padding */
+.tier-card {
+  padding: clamp(1.5rem, 3vw, 2.5rem);
+  height: 100%;
+}
+
+/* Content sections with consistent max-width */
+.section-content-sm {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  max-width: 900px;
+  padding-left: clamp(1.25rem, 4vw, 5rem);
+  padding-right: clamp(1.25rem, 4vw, 5rem);
+}
+
+/* Heading + body spacing */
+.heading-gap { margin-bottom: clamp(2rem, 4vw, 4rem); }
+.body-gap    { margin-top:    clamp(2rem, 4vw, 4rem); }
