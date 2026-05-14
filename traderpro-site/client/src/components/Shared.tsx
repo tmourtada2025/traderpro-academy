@@ -1,12 +1,10 @@
 import { useEffect, useRef, useState, ReactNode, useMemo } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 
-// ── GRAIN ────────────────────────────────────────────────────────────────────
 export function Grain() {
   return <div className="grain" aria-hidden="true" />;
 }
 
-// ── ARROW ICON ───────────────────────────────────────────────────────────────
 export function ArrowIcon({ size = 15, className = '' }: { size?: number; className?: string }) {
   return (
     <svg width={size} height={size} viewBox="0 0 24 24" fill="none" className={className} aria-hidden="true">
@@ -16,7 +14,6 @@ export function ArrowIcon({ size = 15, className = '' }: { size?: number; classN
   );
 }
 
-// ── MAGNETIC BUTTON — exact GPT implementation ───────────────────────────────
 interface MagProps { children: ReactNode; subtle?: boolean; href?: string; onClick?: () => void; }
 export function MagneticButton({ children, subtle = false, href, onClick }: MagProps) {
   const cls = `group relative overflow-hidden rounded-full px-6 py-3 text-xs uppercase tracking-[0.32em] transition cursor-pointer ${
@@ -43,7 +40,6 @@ export function MagneticButton({ children, subtle = false, href, onClick }: MagP
   );
 }
 
-// ── AMBIENT MARKET LINES — exact GPT implementation ──────────────────────────
 export function AmbientMarketLines() {
   const lines = useMemo(() =>
     Array.from({ length: 28 }, (_, i) => ({
@@ -80,12 +76,15 @@ export function AmbientMarketLines() {
   );
 }
 
-// ── HERO PARALLAX WRAPPER ────────────────────────────────────────────────────
 export function HeroParallax({ children }: { children: ReactNode }) {
   const { scrollYProgress } = useScroll();
   const y = useTransform(scrollYProgress, [0, 0.35], [0, -180]);
   const opacity = useTransform(scrollYProgress, [0, 0.25], [1, 0.3]);
-  return <motion.div style={{ y, opacity }} className="relative z-10 flex min-h-screen flex-col justify-center section-content pt-24">{children}</motion.div>;
+  return (
+    <motion.div style={{ y, opacity }} className="relative z-10 flex min-h-screen flex-col justify-center px-8 pt-24 md:px-20 lg:px-24">
+      {children}
+    </motion.div>
+  );
 }
 
 export function OrbParallax({ style }: { style: React.CSSProperties }) {
@@ -96,7 +95,6 @@ export function OrbParallax({ style }: { style: React.CSSProperties }) {
   );
 }
 
-// ── FADE UP ON SCROLL ────────────────────────────────────────────────────────
 export function FadeUp({ children, delay = 0, className = '' }: { children: ReactNode; delay?: number; className?: string }) {
   const ref = useRef<HTMLDivElement>(null);
   useEffect(() => {
@@ -108,7 +106,43 @@ export function FadeUp({ children, delay = 0, className = '' }: { children: Reac
   return <div ref={ref} className={`fade-up ${className}`} style={{ transitionDelay: `${delay}ms` }}>{children}</div>;
 }
 
-// ── STAT ITEM WITH COUNT-UP ──────────────────────────────────────────────────
+// ── STATS STRIP — single scrolling line with diamonds ─────────────────────
+export function StatsStrip() {
+  const stats = [
+    { value: '400+', label: 'Hours of Content' },
+    { value: '3', label: 'Languages' },
+    { value: '3', label: 'Program Tiers' },
+    { value: 'MENA · LATAM · SEA', label: 'Global Reach' },
+  ];
+  const Diamond = () => (
+    <span style={{ color: 'rgba(235,228,210,0.3)', fontSize: '10px', margin: '0 2rem' }}>◆</span>
+  );
+  const content = stats.map((s, i) => (
+    <span key={i} className="inline-flex items-center gap-4 whitespace-nowrap">
+      <span className="serif font-bold" style={{ fontSize: 'clamp(2.2rem, 4vw, 3.5rem)', letterSpacing: '-0.04em', lineHeight: 1, color: 'rgba(235,228,210,0.95)' }}>{s.value}</span>
+      <span className="text-[10px] uppercase tracking-[0.4em]" style={{ color: 'rgba(200,192,175,0.45)' }}>{s.label}</span>
+      {i < stats.length - 1 && <Diamond />}
+    </span>
+  ));
+
+  return (
+    <div style={{ borderTop: '0.5px solid rgba(255,255,255,0.06)', borderBottom: '0.5px solid rgba(180,140,20,0.2)', background: 'rgba(8,9,12,0.95)', overflow: 'hidden', padding: '2.5rem 0' }}>
+      <div className="flex items-center justify-center gap-0 px-8 md:px-20 flex-wrap gap-y-4">
+        {stats.map((s, i) => (
+          <span key={i} className="inline-flex items-center">
+            <span className="inline-flex items-center gap-3 px-6">
+              <span className="serif font-bold" style={{ fontSize: 'clamp(2rem, 3.5vw, 3rem)', letterSpacing: '-0.04em', lineHeight: 1, color: 'rgba(235,228,210,0.95)' }}>{s.value}</span>
+              <span className="text-[10px] uppercase tracking-[0.4em]" style={{ color: 'rgba(200,192,175,0.45)' }}>{s.label}</span>
+            </span>
+            {i < stats.length - 1 && <span style={{ color: 'rgba(235,228,210,0.25)', fontSize: '8px' }}>◆</span>}
+          </span>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+// ── STAT ITEM (kept for compatibility) ───────────────────────────────────
 export function StatItem({ value, suffix = '', label }: { value: number | null; suffix?: string; label: string }) {
   const [count, setCount] = useState(0);
   const ref = useRef<HTMLDivElement>(null);
@@ -127,15 +161,15 @@ export function StatItem({ value, suffix = '', label }: { value: number | null; 
   return (
     <div ref={ref} className="flex flex-col items-center gap-3 text-center">
       {value !== null
-        ? <span className="serif font-bold" style={{ fontSize: 'clamp(56px,9vw,96px)', lineHeight: 1, letterSpacing: '-0.05em', color: 'var(--gold-bright)' }}>{count}{suffix}</span>
-        : <span className="serif font-bold whitespace-nowrap" style={{ fontSize: 'clamp(20px,2.8vw,34px)', lineHeight: 1, letterSpacing: '-0.02em', color: 'var(--gold-bright)' }}>MENA · LATAM · SEA</span>
+        ? <span className="serif font-bold" style={{ fontSize: 'clamp(2.5rem, 6vw, 4.5rem)', lineHeight: 1, letterSpacing: '-0.05em', color: 'rgba(235,228,210,0.95)' }}>{count}{suffix}</span>
+        : <span className="serif font-bold whitespace-nowrap" style={{ fontSize: 'clamp(1.2rem, 2vw, 1.8rem)', lineHeight: 1, letterSpacing: '-0.02em', color: 'rgba(235,228,210,0.95)' }}>MENA · LATAM · SEA</span>
       }
-      <span className="text-[10px] uppercase tracking-[0.4em]" style={{ color: 'var(--stone-dim)' }}>{label}</span>
+      <span className="text-[10px] uppercase tracking-[0.4em]" style={{ color: 'rgba(200,192,175,0.4)' }}>{label}</span>
     </div>
   );
 }
 
-// ── MARKET TICKER (non-fixed, used below hero) ───────────────────────────────
+// ── MARKET TICKER ────────────────────────────────────────────────────────
 interface TickerItem { symbol: string; price: number; dir: 'up' | 'down'; }
 const BASE_TICKERS: TickerItem[] = [
   { symbol: 'EUR/USD', price: 1.0842, dir: 'up' },
@@ -172,10 +206,10 @@ export function MarketStrip() {
   }, []);
 
   const tickerRow = tickers.map((t, i) => (
-    <span key={i} className="inline-flex items-center gap-2 px-6 whitespace-nowrap">
-      <span className="mono text-[11px]" style={{ color: 'var(--stone-dim)' }}>{t.symbol}</span>
-      <span className="mono text-[11px] font-medium" style={{ color: 'rgba(220,210,190,0.8)' }}>{fmt(t.price)}</span>
-      <span className="mono text-[10px] font-bold" style={{ color: t.dir === 'up' ? 'var(--gain)' : 'var(--loss)' }}>
+    <span key={i} className="inline-flex items-center gap-2 px-5 whitespace-nowrap">
+      <span className="mono text-[11px]" style={{ color: 'rgba(200,192,175,0.45)' }}>{t.symbol}</span>
+      <span className="mono text-[11px] font-medium" style={{ color: 'rgba(220,210,190,0.75)' }}>{fmt(t.price)}</span>
+      <span className="mono text-[10px] font-bold" style={{ color: t.dir === 'up' ? '#1E7A4A' : '#C0392B' }}>
         {t.dir === 'up' ? '▲' : '▼'}
       </span>
     </span>
@@ -183,14 +217,14 @@ export function MarketStrip() {
 
   const newsRow = HEADLINES.map((h, i) => (
     <span key={i} className="inline-flex items-center gap-5 px-8 whitespace-nowrap">
-      <span className="mono text-[9px]" style={{ color: 'rgba(180,140,20,0.4)' }}>◆</span>
-      <span className="mono text-[10px]" style={{ color: 'var(--stone-dim)' }}>{h}</span>
+      <span className="mono text-[9px]" style={{ color: 'rgba(180,140,20,0.35)' }}>◆</span>
+      <span className="mono text-[10px]" style={{ color: 'rgba(200,192,175,0.4)' }}>{h}</span>
     </span>
   ));
 
   return (
-    <div style={{ background: '#060709', borderBottom: '0.5px solid rgba(180,140,20,0.2)' }}>
-      <div style={{ overflow: 'hidden', borderBottom: '0.5px solid var(--border)', padding: '6px 0' }}>
+    <div style={{ background: '#060709', borderBottom: '0.5px solid rgba(180,140,20,0.15)' }}>
+      <div style={{ overflow: 'hidden', borderBottom: '0.5px solid rgba(255,255,255,0.04)', padding: '6px 0' }}>
         <div className="ticker-fast" style={{ whiteSpace: 'nowrap', minWidth: 'max-content' }}>
           <span className="inline-flex">{tickerRow}</span>
           <span className="inline-flex">{tickerRow}</span>
