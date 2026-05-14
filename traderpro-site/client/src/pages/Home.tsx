@@ -44,11 +44,11 @@ export default function Home() {
             <span className="hero-title-pull block">conviction.</span>
           </motion.h1>
           <motion.div initial={{ opacity: 0, y: 32 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 0.45 }}
-            className="hero-copy mt-10 flex flex-col gap-5">
+            className="hero-copy mt-10 flex flex-col gap-15">
             <p className="text-lg leading-relaxed md:text-xl" style={{ color: 'rgba(200,192,175,0.75)' }}>
               From market foundations to professional execution — TradePro delivers structured Forex and Crypto education in English, Arabic, and Spanish.
             </p>
-            <div className="flex flex-wrap gap-15 pt-15">
+            <div className="flex flex-wrap gap-2 pt-2">
               <MagneticButton href="/programs/fx/starter">Start learning</MagneticButton>
               <MagneticButton href="/pricing" subtle>View pricing</MagneticButton>
             </div>
