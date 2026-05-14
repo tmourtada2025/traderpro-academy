@@ -105,7 +105,7 @@ function PolicyPage({ slug }: { slug: PolicyKey }) {
       <Grain />
       <Navigation />
 
-      <section className="relative min-h-[60vh] overflow-hidden" style={{ background: 'var(--dark-1)' }}>
+      <section className="relative min-h-[50vh] overflow-hidden" style={{ background: 'var(--dark-1)' }}>
         <AmbientMarketLines />
         <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, transparent 0%, var(--dark-1) 80%)' }} />
         <HeroParallax>
@@ -127,7 +127,7 @@ function PolicyPage({ slug }: { slug: PolicyKey }) {
       <section className="py-36 divider">
         <FadeUp>
           <div className="max-w-4xl mx-auto">
-            <div className="text-base leading-9 whitespace-pre-line" style={{ color: 'rgba(200,192,175,0.65)' }}>
+            <div className="text-base leading-[2] whitespace-pre-line text-base md:text-lg" style={{ color: 'rgba(200,192,175,0.65)' }}>
               {p.body}
             </div>
           </div>
@@ -139,7 +139,6 @@ function PolicyPage({ slug }: { slug: PolicyKey }) {
   );
 }
 
-const W = "mx-auto w-full max-w-6xl px-8 md:px-20";
 
 export function DisclaimerPage() { return <PolicyPage slug="disclaimer" />; }
 export function PrivacyPage() { return <PolicyPage slug="privacy" />; }

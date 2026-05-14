@@ -3,7 +3,6 @@ import { Grain, AmbientMarketLines, HeroParallax, OrbParallax, MagneticButton, F
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 
-const W = "mx-auto w-full max-w-6xl px-8 md:px-20";
 
 const instructors = [
   { initials: 'TM', name: 'T. Mourtada', title: 'Lead Instructor', bio: '15+ years in institutional FX and financial markets education. Architect of the TradePro curriculum.' },
@@ -18,7 +17,7 @@ export default function About() {
       <Navigation />
 
       {/* ── HERO ── */}
-      <section className="relative min-h-[120vh] overflow-hidden" style={{ background: 'var(--dark-1)' }}>
+      <section className="relative min-h-[90vh] overflow-hidden" style={{ background: 'var(--dark-1)' }}>
         <AmbientMarketLines />
         <OrbParallax style={{ right: '-12rem', top: '-6rem', width: '44rem', height: '44rem', background: 'radial-gradient(circle at 35% 35%, rgba(184,134,11,0.14), rgba(42,72,102,0.10) 40%, transparent 70%)' }} />
         <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, transparent 0%, var(--dark-1) 80%)' }} />
@@ -33,7 +32,7 @@ export default function About() {
             <span className="block translate-x-[6vw] italic" style={{ color: 'rgba(235,228,210,0.7)' }}>For traders.</span>
           </motion.h1>
           <motion.p initial={{ opacity: 0, y: 32 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 0.45 }}
-            className="mt-10 text-lg leading-relaxed md:ml-[40vw] md:max-w-md md:text-xl" style={{ color: 'rgba(200,192,175,0.68)' }}>
+            className="mt-12 text-lg leading-relaxed md:ml-[40vw] md:max-w-md md:text-xl" style={{ color: 'rgba(200,192,175,0.68)' }}>
             TradePro Academy was built on a single conviction: real traders need real education, not motivational rhetoric.
           </motion.p>
         </HeroParallax>
@@ -41,7 +40,7 @@ export default function About() {
 
       {/* ── WHO WE ARE ── */}
       <section className="divider" style={{ background: 'var(--dark-1)', padding: '7rem 0' }}>
-        <div className={W}>
+        <div className="section-content">
           <FadeUp>
             <p className="text-xs uppercase tracking-[0.5em] text-center mb-10" style={{ color: 'rgba(200,192,175,0.45)' }}>Who we are</p>
             <h2 className="serif leading-[0.86] tracking-[-0.07em] text-center" style={{ fontSize: 'clamp(2.5rem, 10vw, 6rem)' }}>
@@ -66,7 +65,7 @@ export default function About() {
 
       {/* ── VISION / MISSION ── */}
       <section className="divider" style={{ background: 'var(--dark-2)', padding: '7rem 0' }}>
-        <div className={W}>
+        <div className="section-content">
           <div className="grid grid-cols-1 gap-16 md:grid-cols-2">
             <FadeUp>
               <p className="text-xs uppercase tracking-[0.45em] mb-6" style={{ color: 'var(--gold)' }}>Our Vision</p>
@@ -92,7 +91,7 @@ export default function About() {
 
       {/* ── WHAT WE OFFER ── */}
       <section className="divider" style={{ background: 'var(--dark-1)', padding: '7rem 0' }}>
-        <div className={W}>
+        <div className="section-content">
           <FadeUp>
             <p className="text-xs uppercase tracking-[0.5em] text-center mb-10" style={{ color: 'rgba(200,192,175,0.45)' }}>Beyond the curriculum</p>
             <h2 className="serif leading-[0.86] tracking-[-0.07em] text-center" style={{ fontSize: 'clamp(2.5rem, 8vw, 5rem)' }}>
@@ -107,7 +106,7 @@ export default function About() {
               { title: 'One-on-One Coaching', text: 'Schedule personal sessions with expert course coaches. Whether you need help with a specific concept or strategic guidance, our coaches are with you.' },
             ].map((item, i) => (
               <FadeUp key={item.title} delay={i * 80}>
-                <div className="p-10" style={{ background: 'var(--dark-1)' }}>
+                <div className="p-12" style={{ background: 'var(--dark-1)' }}>
                   <h4 className="serif text-2xl tracking-[-0.03em] mb-5" style={{ color: 'var(--stone)' }}>{item.title}</h4>
                   <p className="text-sm leading-7" style={{ color: 'rgba(200,192,175,0.55)' }}>{item.text}</p>
                 </div>
@@ -119,7 +118,7 @@ export default function About() {
 
       {/* ── TEAM ── */}
       <section className="divider" style={{ background: 'var(--dark-2)', padding: '7rem 0' }}>
-        <div className={W}>
+        <div className="section-content">
           <FadeUp>
             <p className="text-xs uppercase tracking-[0.5em] text-center mb-4" style={{ color: 'rgba(200,192,175,0.45)' }}>The team</p>
             <h2 className="serif leading-[0.86] tracking-[-0.07em] text-center mb-16" style={{ fontSize: 'clamp(2.5rem, 8vw, 5rem)' }}>
@@ -129,7 +128,7 @@ export default function About() {
           <div className="grid grid-cols-1 gap-px md:grid-cols-3" style={{ background: 'var(--border)' }}>
             {instructors.map((inst, i) => (
               <FadeUp key={inst.name} delay={i * 100}>
-                <div className="p-10" style={{ background: 'var(--dark-2)' }}>
+                <div className="p-12" style={{ background: 'var(--dark-2)' }}>
                   <div className="w-16 h-16 rounded-full flex items-center justify-center serif text-xl font-bold mb-6" style={{ background: 'rgba(184,134,11,0.1)', color: 'var(--gold-bright)' }}>{inst.initials}</div>
                   <div className="serif text-xl mb-1" style={{ letterSpacing: '-0.02em' }}>{inst.name}</div>
                   <div className="text-[9px] uppercase tracking-[0.3em] mb-4" style={{ color: 'var(--gold)' }}>{inst.title}</div>
@@ -144,7 +143,7 @@ export default function About() {
       {/* ── CTA ── */}
       <section className="relative divider" style={{ background: 'var(--dark-1)', padding: '7rem 0' }}>
         <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
-        <div className={W}>
+        <div className="section-content">
           <FadeUp>
             <div className="flex flex-col gap-12 md:flex-row md:items-end md:justify-between">
               <h2 className="serif leading-[0.82] tracking-[-0.09em]" style={{ fontSize: 'clamp(2.5rem, 10vw, 7rem)', maxWidth: '12ch' }}>

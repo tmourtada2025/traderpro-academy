@@ -3,7 +3,6 @@ import { Grain, AmbientMarketLines, HeroParallax, OrbParallax, MagneticButton, F
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 
-const W = "mx-auto w-full max-w-6xl px-8 md:px-20";
 
 const tiers = {
   starter: {

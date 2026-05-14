@@ -4,7 +4,6 @@ import { Grain, AmbientMarketLines, HeroParallax, OrbParallax, MagneticButton, F
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 
-const W = "mx-auto w-full max-w-6xl px-8 md:px-20";
 
 const tiers = [
   {
@@ -77,7 +76,7 @@ export default function Pricing() {
 
       {/* ── TOGGLE ── */}
       <section className="py-10 divider">
-        <div className={W}>
+        <div className="section-content">
           <div className="flex items-center gap-8">
             <button onClick={() => setAnnual(false)} className={`text-[11px] uppercase tracking-[0.3em] pb-1 transition-all ${!annual ? 'text-stone-100 border-b border-[var(--gold-solid)]' : 'text-stone-400 hover:text-stone-200'}`}>
               Monthly
@@ -92,11 +91,11 @@ export default function Pricing() {
 
       {/* ── TIERS ── */}
       <section className="pb-24 divider">
-        <div className={W}>
+        <div className="section-content">
           <div className="grid grid-cols-1 md:grid-cols-3" style={{ borderTop: '0.5px solid var(--border)' }}>
             {tiers.map((t, i) => (
               <FadeUp key={t.name} delay={i * 80}>
-                <div className="p-8 h-full" style={{
+                <div className="p-10 h-full" style={{
                   borderRight: i < 2 ? '0.5px solid var(--border)' : 'none',
                   borderLeft: t.primary ? '2px solid var(--gold-solid)' : 'none',
                   background: t.primary ? '#0a0c10' : 'var(--dark-1)',
@@ -105,7 +104,7 @@ export default function Pricing() {
                     <div className="text-[9px] uppercase tracking-[0.3em] mb-4 inline-block px-3 py-1" style={{ border: '0.5px solid var(--gold-solid)', color: 'var(--gold-bright)' }}>{t.badge}</div>
                   )}
                   <h3 className="serif text-2xl mb-2" style={{ letterSpacing: '-0.03em' }}>{t.name}</h3>
-                  <div className="serif mb-1" style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', color: 'var(--gold-bright)', letterSpacing: '-0.04em', lineHeight: 1 }}>
+                  <div className="serif mb-1" style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', color: 'rgba(235,228,210,0.95)', letterSpacing: '-0.04em', lineHeight: 1 }}>
                     ${price(t.mo)}<span className="text-sm" style={{ color: 'var(--stone-dim)' }}>{annual ? '/yr' : '/mo'}</span>
                   </div>
                   {t.trial && <div className="text-xs mb-3 uppercase tracking-[0.25em]" style={{ color: 'var(--gold)', opacity: 0.7 }}>{t.trial}</div>}
@@ -113,7 +112,7 @@ export default function Pricing() {
                   <ul className="space-y-3 mb-8">
                     {t.bullets.map(b => (
                       <li key={b} className="text-sm flex items-start gap-2" style={{ color: 'rgba(200,192,175,0.65)' }}>
-                        <span style={{ color: 'var(--gold)', marginTop: 2, flexShrink: 0 }}>▸</span>{b}
+                        <span style={{ color: 'rgba(200,192,175,0.5)', marginTop: 2, flexShrink: 0 }}>▸</span>{b}
                       </li>
                     ))}
                   </ul>
@@ -128,8 +127,8 @@ export default function Pricing() {
       </section>
 
       {/* ── FEATURE TABLE ── */}
-      <section className="py-20 divider" style={{ background: 'var(--dark-2)' }}>
-        <div className={W}>
+      <section className="py-28 divider" style={{ background: 'var(--dark-2)' }}>
+        <div className="section-content">
           <FadeUp>
             <p className="mb-10 text-xs uppercase tracking-[0.5em] text-center" style={{ color: 'rgba(200,192,175,0.4)' }}>What's included</p>
           </FadeUp>
@@ -144,7 +143,7 @@ export default function Pricing() {
               <tbody>
                 {featureRows.map((row, ri) => (
                   <tr key={row} style={{ borderBottom: '0.5px solid var(--border)' }}>
-                    <td className="py-3 text-sm" style={{ color: 'rgba(200,192,175,0.55)' }}>{row}</td>
+                    <td className="py-4 text-sm" style={{ color: 'rgba(200,192,175,0.55)' }}>{row}</td>
                     {tiers.map((t, ti) => (
                       <td key={ti} className="py-3 text-center text-sm">
                         {t.features[ri] ? <span style={{ color: 'var(--gold-bright)' }} className="serif">✓</span> : <span style={{ color: 'rgba(200,192,175,0.2)' }}>—</span>}
@@ -160,7 +159,7 @@ export default function Pricing() {
 
       {/* ── PAYMENT METHODS ── */}
       <section className="py-14 divider" style={{ background: 'var(--dark-1)' }}>
-        <div className={W}>
+        <div className="section-content">
           <div className="text-center">
             <div className="text-[10px] uppercase tracking-[0.45em] mb-5" style={{ color: 'rgba(200,192,175,0.35)' }}>Accepted payment methods</div>
             <div className="flex flex-wrap justify-center gap-x-2 gap-y-2">
@@ -177,7 +176,7 @@ export default function Pricing() {
 
       {/* ── FAQ ── */}
       <section className="py-20 divider" style={{ background: 'var(--dark-2)' }}>
-        <div className={W}>
+        <div className="section-content">
           <FadeUp>
             <p className="mb-4 text-xs uppercase tracking-[0.5em] text-center" style={{ color: 'rgba(200,192,175,0.4)' }}>FAQ</p>
             <h2 className="serif text-center leading-[0.86] tracking-[-0.07em] mb-14" style={{ fontSize: 'clamp(2.5rem, 6vw, 4rem)' }}>
