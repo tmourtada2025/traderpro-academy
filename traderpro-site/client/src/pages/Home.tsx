@@ -48,7 +48,7 @@ export default function Home() {
             <p className="text-lg leading-relaxed md:text-xl" style={{ color: 'rgba(200,192,175,0.75)' }}>
               From market foundations to professional execution — TradePro delivers structured Forex and Crypto education in English, Arabic, and Spanish.
             </p>
-            <div className="flex flex-wrap gap-3 pt-3">
+            <div className="flex flex-wrap gap-5 pt-5">
               <MagneticButton href="/programs/fx/starter">Start learning</MagneticButton>
               <MagneticButton href="/pricing" subtle>View pricing</MagneticButton>
             </div>
