@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'; //v3
+import { motion } from 'framer-motion';
 import { Grain, AmbientMarketLines, HeroParallax, OrbParallax, MagneticButton, FadeUp, StatsStrip, MarketStrip } from '@/components/Shared';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
@@ -38,13 +38,13 @@ export default function Home() {
             Professional trading education — 400+ hours across three levels
           </motion.p>
           <motion.h1 initial={{ opacity: 0, y: 70 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1.2, delay: 0.12 }}
-            className="relative max-w-[15ch] serif text-[18vw] leading-[0.76] tracking-[-0.09em] md:text-[14vw] lg:text-[12vw]">
+            className="hero-title relative max-w-[15ch] serif leading-[0.76] tracking-[-0.09em]">
             Trade
-            <span className="block translate-x-[8vw] italic" style={{ color: 'rgba(235,228,210,0.9)' }}>with</span>
-            <span className="block -translate-x-[1vw]">conviction.</span>
+            <span className="hero-title-shift block italic" style={{ color: 'rgba(235,228,210,0.9)' }}>with</span>
+            <span className="hero-title-pull block">conviction.</span>
           </motion.h1>
           <motion.div initial={{ opacity: 0, y: 32 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 0.45 }}
-            className="mt-10 flex flex-col gap-5 md:ml-[45vw] md:mt-[-2rem] md:max-w-md">
+            className="hero-copy mt-10 flex flex-col gap-5">
             <p className="text-lg leading-relaxed md:text-xl" style={{ color: 'rgba(200,192,175,0.75)' }}>
               From market foundations to professional execution — TradePro delivers structured Forex and Crypto education in English, Arabic, and Spanish.
             </p>
@@ -97,7 +97,7 @@ export default function Home() {
           {programs.map(({ num, title, sub, text, href }, i) => (
             <FadeUp key={title} delay={i * 80}>
               <div
-                className={`relative flex flex-col gap-6 py-14 md:grid md:grid-cols-[0.35fr_1fr_0.75fr] md:items-center ${i === 1 ? 'md:translate-x-16' : i === 2 ? 'md:-translate-x-8' : ''}`}
+                className={`program-row relative flex flex-col gap-6 py-14 md:grid md:grid-cols-[0.35fr_1fr_0.75fr] md:items-center ${i === 1 ? 'program-row--right' : i === 2 ? 'program-row--left' : ''}`}
                 style={{ borderTop: '0.5px solid rgba(255,255,255,0.07)' }}
               >
                 <span className="serif text-7xl italic" style={{ color: 'rgba(200,192,175,0.3)' }}>{num}</span>
