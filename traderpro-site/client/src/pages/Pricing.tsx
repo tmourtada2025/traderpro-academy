@@ -75,7 +75,7 @@ export default function Pricing() {
       </section>
 
       {/* ── TOGGLE ── */}
-      <section className="pt-6 pb-4 divider">
+      <section className="section-body divider" style={{ paddingTop: "2rem", paddingBottom: "1.5rem" }}>
         <div className="section-content">
           <div className="flex items-center gap-8">
             <button onClick={() => setAnnual(false)} className={`text-[11px] uppercase tracking-[0.3em] pb-1 transition-all ${!annual ? 'text-stone-100 border-b border-[var(--gold-solid)]' : 'text-stone-400 hover:text-stone-200'}`}>
@@ -90,12 +90,12 @@ export default function Pricing() {
       </section>
 
       {/* ── TIERS ── */}
-      <section className="pb-16 divider">
+      <section className="section-body divider" style={{ paddingTop: "2rem" }}>
         <div className="section-content">
           <div className="grid grid-cols-1 md:grid-cols-3" style={{ borderTop: '0.5px solid var(--border)' }}>
             {tiers.map((t, i) => (
               <FadeUp key={t.name} delay={i * 80}>
-                <div className="p-10 h-full" style={{
+                <div className="tier-card" style={{
                   borderRight: i < 2 ? '0.5px solid var(--border)' : 'none',
                   borderLeft: t.primary ? '2px solid var(--gold-solid)' : 'none',
                   background: t.primary ? '#0a0c10' : 'var(--dark-1)',

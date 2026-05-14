@@ -105,7 +105,7 @@ export function FXTierPage({ tier }: { tier: TierKey }) {
             <span className="block translate-x-[5vw] italic" style={{ color: t.color }}>{t.title.split(' ').slice(2).join(' ')}</span>
           </motion.h1>
           <motion.div initial={{ opacity: 0, y: 32 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 0.45 }}
-            className="mt-10 md:ml-[44vw] md:max-w-lg">
+            className="hero-copy-right mt-10">
             <div className="serif text-3xl mb-3" style={{ color: t.color, letterSpacing: '-0.04em' }}>
               {t.price}{t.trial && <span className="text-sm ml-2" style={{ color: 'rgba(200,192,175,0.5)' }}>({t.trial})</span>}
             </div>
@@ -154,7 +154,7 @@ export function FXTierPage({ tier }: { tier: TierKey }) {
       </section>
 
       {/* ── MODULES ── */}
-      <section className="py-36 divider" style={{ background: isElite ? '#07080b' : 'var(--dark-1)' }}>
+      <section className="section-body divider" style={{ background: isElite ? '#07080b' : 'var(--dark-1)' }}>
         <FadeUp>
           <p className="mb-8 text-xs uppercase tracking-[0.5em]" style={{ color: 'rgba(200,192,175,0.4)' }}>Sample modules</p>
           <h2 className="serif text-[8vw] leading-[0.88] tracking-[-0.06em] mb-12 md:text-[5vw]">
@@ -173,7 +173,7 @@ export function FXTierPage({ tier }: { tier: TierKey }) {
       </section>
 
       {/* ── CTA ── */}
-      <section className="relative py-36 divider" style={{ background: isElite ? '#090a0e' : 'var(--dark-2)' }}>
+      <section className="relative section-body divider" style={{ background: isElite ? '#090a0e' : 'var(--dark-2)' }}>
         <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
         <FadeUp>
           <div className="mx-auto px-8 md:px-20 flex max-w-7xl flex-col gap-12 md:flex-row md:items-end md:justify-between">
