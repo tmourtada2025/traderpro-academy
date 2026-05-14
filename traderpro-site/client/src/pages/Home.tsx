@@ -44,11 +44,11 @@ export default function Home() {
             <span className="hero-title-pull block">conviction.</span>
           </motion.h1>
           <motion.div initial={{ opacity: 0, y: 32 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 0.45 }}
-            className="hero-copy mt-10 flex flex-col gap-15">
+            className="hero-copy flex flex-col gap-5">
             <p className="text-lg leading-relaxed md:text-xl" style={{ color: 'rgba(200,192,175,0.75)' }}>
               From market foundations to professional execution — TradePro delivers structured Forex and Crypto education in English, Arabic, and Spanish.
             </p>
-            <div className="flex flex-wrap gap-2 pt-2">
+            <div className="flex flex-wrap gap-3 pt-3">
               <MagneticButton href="/programs/fx/starter">Start learning</MagneticButton>
               <MagneticButton href="/pricing" subtle>View pricing</MagneticButton>
             </div>
@@ -65,7 +65,7 @@ export default function Home() {
       <MarketStrip />
 
       {/* ── FLOW STATEMENT ── */}
-      <section className="relative divider" style={{ background: 'var(--dark-1)', padding: '12rem 0' }}>
+      <section className="relative divider" style={{ background: 'var(--dark-1)', padding: '9rem 0' }}>
         <div className="section-content">
           <FadeUp>
             <p className="text-xs uppercase tracking-[0.5em] text-center" style={{ color: 'rgba(200,192,175,0.45)', marginBottom: '2.5rem' }}>The approach</p>
