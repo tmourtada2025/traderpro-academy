@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+import { motion } from 'framer-motion'; //v3
 import { Grain, AmbientMarketLines, HeroParallax, OrbParallax, MagneticButton, FadeUp, StatsStrip, MarketStrip } from '@/components/Shared';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
