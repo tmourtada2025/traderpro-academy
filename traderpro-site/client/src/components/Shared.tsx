@@ -85,7 +85,7 @@ export function HeroParallax({ children }: { children: ReactNode }) {
   const { scrollYProgress } = useScroll();
   const y = useTransform(scrollYProgress, [0, 0.35], [0, -180]);
   const opacity = useTransform(scrollYProgress, [0, 0.25], [1, 0.3]);
-  return <motion.div style={{ y, opacity }} className="relative z-10 flex min-h-screen flex-col justify-center px-5 pt-24 md:px-10 lg:px-16">{children}</motion.div>;
+  return <motion.div style={{ y, opacity }} className="relative z-10 flex min-h-screen flex-col justify-center px-8 pt-24 md:px-20 lg:px-20">{children}</motion.div>;
 }
 
 export function OrbParallax({ style }: { style: React.CSSProperties }) {
