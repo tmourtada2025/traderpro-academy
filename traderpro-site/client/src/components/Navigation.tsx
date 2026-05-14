@@ -19,7 +19,7 @@ export default function Navigation() {
     `text-[11px] uppercase tracking-[0.28em] transition hover:text-white ${active(path) ? 'text-white' : 'text-stone-300/75'}`;
 
   return (
-    <header className="fixed left-0 right-0 top-0 z-40 px-8 py-6 md:px-20">
+    <header className="fixed left-0 right-0 top-0 z-40 py-6 section-content" style={{ maxWidth: "none" }}>
       <div className="flex items-center justify-between">
         {/* Logo */}
         <Link href="/">
