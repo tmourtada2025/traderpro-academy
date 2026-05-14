@@ -19,8 +19,8 @@ export default function Navigation() {
     `text-[11px] uppercase tracking-[0.28em] transition hover:text-white ${active(path) ? 'text-white' : 'text-stone-300/75'}`;
 
   return (
-    <header className="fixed left-0 right-0 top-0 z-40 py-6 section-content" style={{ maxWidth: "none" }}>
-      <div className="flex items-center justify-between">
+    <header className="site-nav fixed left-0 right-0 top-0 z-40">
+      <div className="nav-inner flex items-center justify-between">
         {/* Logo */}
         <Link href="/">
           <a className="font-serif text-xl tracking-wide text-stone-100 hover:opacity-80 transition">TraderPro</a>
