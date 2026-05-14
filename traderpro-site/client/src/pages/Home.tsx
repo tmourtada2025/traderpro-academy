@@ -65,7 +65,7 @@ export default function Home() {
       <MarketStrip />
 
       {/* ── FLOW STATEMENT ── */}
-      <section className="relative divider" style={{ background: 'var(--dark-1)', padding: '9rem 0' }}>
+      <section className="relative divider" style={{ background: 'var(--dark-1)', padding: '12rem 0' }}>
         <div className="section-content">
           <FadeUp>
             <p className="text-xs uppercase tracking-[0.5em] text-center" style={{ color: 'rgba(200,192,175,0.45)', marginBottom: '2.5rem' }}>The approach</p>
