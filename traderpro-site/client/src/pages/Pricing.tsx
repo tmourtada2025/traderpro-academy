@@ -53,7 +53,7 @@ export default function Pricing() {
       <Navigation />
 
       {/* ── HERO ── */}
-      <section className="relative overflow-hidden" style={{ minHeight: '72vh' }} style={{ background: 'var(--dark-1)' }}>
+      <section className="relative overflow-hidden" style={{ minHeight: '72vh', background: 'var(--dark-1)' }}>
         <AmbientMarketLines />
         <OrbParallax style={{ right: '-8rem', top: '-4rem', width: '38rem', height: '38rem', background: 'radial-gradient(circle at 35% 35%, rgba(184,134,11,0.12), transparent 70%)' }} />
         <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, transparent 0%, var(--dark-1) 82%)' }} />

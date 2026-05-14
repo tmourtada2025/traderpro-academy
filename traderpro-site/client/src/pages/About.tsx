@@ -17,7 +17,7 @@ export default function About() {
       <Navigation />
 
       {/* ── HERO ── */}
-      <section className="relative overflow-hidden" style={{ minHeight: '75vh' }} style={{ background: 'var(--dark-1)' }}>
+      <section className="relative overflow-hidden" style={{ minHeight: '75vh', background: 'var(--dark-1)' }}>
         <AmbientMarketLines />
         <OrbParallax style={{ right: '-12rem', top: '-6rem', width: '44rem', height: '44rem', background: 'radial-gradient(circle at 35% 35%, rgba(184,134,11,0.14), rgba(42,72,102,0.10) 40%, transparent 70%)' }} />
         <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, transparent 0%, var(--dark-1) 80%)' }} />

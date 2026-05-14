@@ -105,7 +105,7 @@ function PolicyPage({ slug }: { slug: PolicyKey }) {
       <Grain />
       <Navigation />
 
-      <section className="relative overflow-hidden" style={{ minHeight: '55vh' }} style={{ background: 'var(--dark-1)' }}>
+      <section className="relative overflow-hidden" style={{ minHeight: '55vh', background: 'var(--dark-1)' }}>
         <AmbientMarketLines />
         <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, transparent 0%, var(--dark-1) 80%)' }} />
         <HeroParallax>

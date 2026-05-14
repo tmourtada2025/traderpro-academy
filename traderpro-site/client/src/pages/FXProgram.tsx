@@ -85,7 +85,7 @@ export function FXTierPage({ tier }: { tier: TierKey }) {
       <Navigation />
 
       {/* ── HERO ── */}
-      <section className="relative overflow-hidden" style={{ minHeight: '75vh' }} style={{ background: isElite ? '#07080b' : 'var(--dark-1)' }}>
+      <section className="relative overflow-hidden" style={{ minHeight: '75vh', background: isElite ? '#07080b' : 'var(--dark-1)' }}>
         <AmbientMarketLines />
         <OrbParallax style={{ right: '-10rem', top: '-6rem', width: '42rem', height: '42rem', background: `radial-gradient(circle at 35% 35%, ${t.color.replace('0.', '0.1')}, transparent 70%)` }} />
         <div className="absolute inset-0" style={{ background: `linear-gradient(to bottom, transparent 0%, ${isElite ? '#07080b' : 'var(--dark-1)'} 78%)` }} />
