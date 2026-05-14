@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Grain, AmbientMarketLines, HeroParallax, OrbParallax, MagneticButton, FadeUp, StatItem, MarketStrip } from '@/components/Shared';
+import { Grain, AmbientMarketLines, HeroParallax, OrbParallax, MagneticButton, FadeUp, StatsStrip, MarketStrip } from '@/components/Shared';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 
@@ -55,22 +55,9 @@ export default function Home() {
           </motion.div>
         </HeroParallax>
 
-        {/* Stats — anchored bottom of hero, scrolls away */}
-        <div className="absolute bottom-0 left-0 right-0 z-10" style={{ borderTop: '0.5px solid var(--border)', background: 'rgba(8,9,12,0.92)' }}>
-          <div className="mx-auto max-w-5xl px-8 py-14 md:px-20">
-            <div className="grid grid-cols-2 gap-12 md:grid-cols-4 md:gap-0">
-              {[
-                { value: 400, suffix: '+', label: 'Hours of Content' },
-                { value: 3, suffix: '', label: 'Languages' },
-                { value: 3, suffix: '', label: 'Program Tiers' },
-                { value: null, suffix: '', label: 'Global Reach' },
-              ].map((s, i) => (
-                <div key={i} className="flex justify-center" style={{ borderRight: i < 3 ? '0.5px solid rgba(255,255,255,0.06)' : 'none' }}>
-                  <StatItem {...s} />
-                </div>
-              ))}
-            </div>
-          </div>
+        {/* Stats strip — anchored bottom of hero */}
+        <div className="absolute bottom-0 left-0 right-0 z-10">
+          <StatsStrip />
         </div>
       </section>
 
@@ -167,7 +154,7 @@ export default function Home() {
           <FadeUp>
             <div className="flex flex-col gap-12 md:flex-row md:items-end md:justify-between">
               <div>
-                <p className="text-xs uppercase tracking-[0.5em]" style={{ color: 'rgba(200,192,175,0.45)', marginBottom: '1.5rem' }}>Begin</p>
+                <p className="text-xs uppercase tracking-[0.5em]" style={{ color: 'rgba(200,192,175,0.45)', marginBottom: '2rem' }}>Begin</p>
                 <h2 className="serif leading-[0.82] tracking-[-0.09em]" style={{ fontSize: 'clamp(2.5rem, 12vw, 8rem)', maxWidth: '12ch' }}>
                   Your edge starts here.
                 </h2>

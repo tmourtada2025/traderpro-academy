@@ -118,7 +118,7 @@ function PolicyPage({ slug }: { slug: PolicyKey }) {
             {p.title}
           </motion.h1>
           <motion.p initial={{ opacity: 0, y: 32 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 0.45 }}
-            className="mt-6 text-base max-w-lg" style={{ color: 'rgba(200,192,175,0.55)' }}>
+            className="mt-10 text-base max-w-lg" style={{ color: 'rgba(200,192,175,0.55)' }}>
             {p.sub}
           </motion.p>
         </HeroParallax>
@@ -127,7 +127,7 @@ function PolicyPage({ slug }: { slug: PolicyKey }) {
       <section className="py-36 divider">
         <FadeUp>
           <div className="max-w-4xl mx-auto">
-            <div className="text-base leading-[2] whitespace-pre-line text-base md:text-lg" style={{ color: 'rgba(200,192,175,0.65)' }}>
+            <div className="whitespace-pre-line text-base md:text-lg leading-[2.2]" style={{ color: 'rgba(200,192,175,0.65)' }} style={{ color: 'rgba(200,192,175,0.65)' }}>
               {p.body}
             </div>
           </div>

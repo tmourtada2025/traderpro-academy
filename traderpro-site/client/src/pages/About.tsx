@@ -32,7 +32,7 @@ export default function About() {
             <span className="block translate-x-[6vw] italic" style={{ color: 'rgba(235,228,210,0.7)' }}>For traders.</span>
           </motion.h1>
           <motion.p initial={{ opacity: 0, y: 32 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 0.45 }}
-            className="mt-12 text-lg leading-relaxed md:ml-[40vw] md:max-w-md md:text-xl" style={{ color: 'rgba(200,192,175,0.68)' }}>
+            className="mt-16 text-lg leading-relaxed md:ml-[40vw] md:max-w-md md:text-xl" style={{ color: 'rgba(200,192,175,0.68)' }}>
             TradePro Academy was built on a single conviction: real traders need real education, not motivational rhetoric.
           </motion.p>
         </HeroParallax>
@@ -42,14 +42,14 @@ export default function About() {
       <section className="divider" style={{ background: 'var(--dark-1)', padding: '7rem 0' }}>
         <div className="section-content">
           <FadeUp>
-            <p className="text-xs uppercase tracking-[0.5em] text-center mb-10" style={{ color: 'rgba(200,192,175,0.45)' }}>Who we are</p>
+            <p className="text-xs uppercase tracking-[0.5em] text-center mb-12" style={{ color: 'rgba(200,192,175,0.45)' }}>Who we are</p>
             <h2 className="serif leading-[0.86] tracking-[-0.07em] text-center" style={{ fontSize: 'clamp(2.5rem, 10vw, 6rem)' }}>
               More than educators.
               <span className="block" style={{ paddingLeft: '8%', color: 'rgba(200,192,175,0.5)' }}>We are market practitioners.</span>
             </h2>
           </FadeUp>
           <FadeUp delay={200}>
-            <div className="mt-16 grid gap-12 md:grid-cols-[1fr_1.1fr] md:items-start">
+            <div className="mt-20 grid gap-16 md:grid-cols-[1fr_1.1fr] md:items-start">
               <p className="serif leading-tight" style={{ fontSize: 'clamp(1.3rem, 2vw, 1.8rem)', color: 'rgba(200,192,175,0.82)' }}>
                 TradePro Academy is a dynamic team of financial experts, seasoned educators, and market practitioners united by a shared vision.
               </p>
@@ -68,8 +68,8 @@ export default function About() {
         <div className="section-content">
           <div className="grid grid-cols-1 gap-16 md:grid-cols-2">
             <FadeUp>
-              <p className="text-xs uppercase tracking-[0.45em] mb-6" style={{ color: 'var(--gold)' }}>Our Vision</p>
-              <h3 className="serif leading-[0.88] tracking-[-0.06em] mb-8" style={{ fontSize: 'clamp(2rem, 4vw, 3.5rem)' }}>
+              <p className="text-xs uppercase tracking-[0.45em] mb-8" style={{ color: 'var(--gold)' }}>Our Vision</p>
+              <h3 className="serif leading-[0.88] tracking-[-0.06em] mb-10" style={{ fontSize: 'clamp(2rem, 4vw, 3.5rem)' }}>
                 Redefining the standards of trading education globally.
               </h3>
               <p className="text-base leading-8" style={{ color: 'rgba(200,192,175,0.55)' }}>
@@ -77,8 +77,8 @@ export default function About() {
               </p>
             </FadeUp>
             <FadeUp delay={150}>
-              <p className="text-xs uppercase tracking-[0.45em] mb-6" style={{ color: 'var(--gold)' }}>Our Mission</p>
-              <h3 className="serif leading-[0.88] tracking-[-0.06em] mb-8" style={{ fontSize: 'clamp(2rem, 4vw, 3.5rem)' }}>
+              <p className="text-xs uppercase tracking-[0.45em] mb-8" style={{ color: 'var(--gold)' }}>Our Mission</p>
+              <h3 className="serif leading-[0.88] tracking-[-0.06em] mb-10" style={{ fontSize: 'clamp(2rem, 4vw, 3.5rem)' }}>
                 Making world-class trading education accessible and impactful.
               </h3>
               <p className="text-base leading-8" style={{ color: 'rgba(200,192,175,0.55)' }}>
@@ -93,7 +93,7 @@ export default function About() {
       <section className="divider" style={{ background: 'var(--dark-1)', padding: '7rem 0' }}>
         <div className="section-content">
           <FadeUp>
-            <p className="text-xs uppercase tracking-[0.5em] text-center mb-10" style={{ color: 'rgba(200,192,175,0.45)' }}>Beyond the curriculum</p>
+            <p className="text-xs uppercase tracking-[0.5em] text-center mb-12" style={{ color: 'rgba(200,192,175,0.45)' }}>Beyond the curriculum</p>
             <h2 className="serif leading-[0.86] tracking-[-0.07em] text-center" style={{ fontSize: 'clamp(2.5rem, 8vw, 5rem)' }}>
               Education that goes beyond the screen.
             </h2>
@@ -106,7 +106,7 @@ export default function About() {
               { title: 'One-on-One Coaching', text: 'Schedule personal sessions with expert course coaches. Whether you need help with a specific concept or strategic guidance, our coaches are with you.' },
             ].map((item, i) => (
               <FadeUp key={item.title} delay={i * 80}>
-                <div className="p-12" style={{ background: 'var(--dark-1)' }}>
+                <div className="p-14" style={{ background: 'var(--dark-1)' }}>
                   <h4 className="serif text-2xl tracking-[-0.03em] mb-5" style={{ color: 'var(--stone)' }}>{item.title}</h4>
                   <p className="text-sm leading-7" style={{ color: 'rgba(200,192,175,0.55)' }}>{item.text}</p>
                 </div>
@@ -120,7 +120,7 @@ export default function About() {
       <section className="divider" style={{ background: 'var(--dark-2)', padding: '7rem 0' }}>
         <div className="section-content">
           <FadeUp>
-            <p className="text-xs uppercase tracking-[0.5em] text-center mb-4" style={{ color: 'rgba(200,192,175,0.45)' }}>The team</p>
+            <p className="text-xs uppercase tracking-[0.5em] text-center mb-12" style={{ color: 'rgba(200,192,175,0.45)' }}>The team</p>
             <h2 className="serif leading-[0.86] tracking-[-0.07em] text-center mb-16" style={{ fontSize: 'clamp(2.5rem, 8vw, 5rem)' }}>
               Built by <span className="italic" style={{ color: 'var(--gold-bright)' }}>practitioners.</span>
             </h2>
@@ -128,7 +128,7 @@ export default function About() {
           <div className="grid grid-cols-1 gap-px md:grid-cols-3" style={{ background: 'var(--border)' }}>
             {instructors.map((inst, i) => (
               <FadeUp key={inst.name} delay={i * 100}>
-                <div className="p-12" style={{ background: 'var(--dark-2)' }}>
+                <div className="p-14" style={{ background: 'var(--dark-2)' }}>
                   <div className="w-16 h-16 rounded-full flex items-center justify-center serif text-xl font-bold mb-6" style={{ background: 'rgba(184,134,11,0.1)', color: 'var(--gold-bright)' }}>{inst.initials}</div>
                   <div className="serif text-xl mb-1" style={{ letterSpacing: '-0.02em' }}>{inst.name}</div>
                   <div className="text-[9px] uppercase tracking-[0.3em] mb-4" style={{ color: 'var(--gold)' }}>{inst.title}</div>

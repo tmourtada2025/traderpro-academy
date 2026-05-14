@@ -53,7 +53,7 @@ export default function Pricing() {
       <Navigation />
 
       {/* ── HERO ── */}
-      <section className="relative min-h-[80vh] overflow-hidden" style={{ background: 'var(--dark-1)' }}>
+      <section className="relative min-h-[70vh] overflow-hidden" style={{ background: 'var(--dark-1)' }}>
         <AmbientMarketLines />
         <OrbParallax style={{ right: '-8rem', top: '-4rem', width: '38rem', height: '38rem', background: 'radial-gradient(circle at 35% 35%, rgba(184,134,11,0.12), transparent 70%)' }} />
         <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, transparent 0%, var(--dark-1) 82%)' }} />
@@ -75,7 +75,7 @@ export default function Pricing() {
       </section>
 
       {/* ── TOGGLE ── */}
-      <section className="py-10 divider">
+      <section className="pt-6 pb-4 divider">
         <div className="section-content">
           <div className="flex items-center gap-8">
             <button onClick={() => setAnnual(false)} className={`text-[11px] uppercase tracking-[0.3em] pb-1 transition-all ${!annual ? 'text-stone-100 border-b border-[var(--gold-solid)]' : 'text-stone-400 hover:text-stone-200'}`}>
@@ -90,7 +90,7 @@ export default function Pricing() {
       </section>
 
       {/* ── TIERS ── */}
-      <section className="pb-24 divider">
+      <section className="pb-16 divider">
         <div className="section-content">
           <div className="grid grid-cols-1 md:grid-cols-3" style={{ borderTop: '0.5px solid var(--border)' }}>
             {tiers.map((t, i) => (
@@ -107,7 +107,7 @@ export default function Pricing() {
                   <div className="serif mb-1" style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', color: 'rgba(235,228,210,0.95)', letterSpacing: '-0.04em', lineHeight: 1 }}>
                     ${price(t.mo)}<span className="text-sm" style={{ color: 'var(--stone-dim)' }}>{annual ? '/yr' : '/mo'}</span>
                   </div>
-                  {t.trial && <div className="text-xs mb-3 uppercase tracking-[0.25em]" style={{ color: 'var(--gold)', opacity: 0.7 }}>{t.trial}</div>}
+                  {t.trial && <div className="text-xs mb-3 uppercase tracking-[0.25em]" style={{ color: 'rgba(200,192,175,0.5)' }}>{t.trial}</div>}
                   <p className="text-sm mb-6 mt-2" style={{ color: 'var(--stone-dim)' }}>{t.tagline}</p>
                   <ul className="space-y-3 mb-8">
                     {t.bullets.map(b => (
@@ -158,7 +158,7 @@ export default function Pricing() {
       </section>
 
       {/* ── PAYMENT METHODS ── */}
-      <section className="py-14 divider" style={{ background: 'var(--dark-1)' }}>
+      <section className="py-8 divider" style={{ background: 'var(--dark-1)' }}>
         <div className="section-content">
           <div className="text-center">
             <div className="text-[10px] uppercase tracking-[0.45em] mb-5" style={{ color: 'rgba(200,192,175,0.35)' }}>Accepted payment methods</div>
@@ -175,7 +175,7 @@ export default function Pricing() {
       </section>
 
       {/* ── FAQ ── */}
-      <section className="py-20 divider" style={{ background: 'var(--dark-2)' }}>
+      <section className="py-12 divider" style={{ background: 'var(--dark-2)' }}>
         <div className="section-content">
           <FadeUp>
             <p className="mb-4 text-xs uppercase tracking-[0.5em] text-center" style={{ color: 'rgba(200,192,175,0.4)' }}>FAQ</p>
