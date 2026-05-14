@@ -129,7 +129,7 @@ body {
   margin: 0 auto;
 }
 .hero-shell {
-  padding-left: clamp(2rem, 7vw, 9rem);
+  padding-left: clamp(1.5rem, 4vw, 5rem);
   padding-right: clamp(2rem, 7vw, 9rem);
 }
 .hero-title {
